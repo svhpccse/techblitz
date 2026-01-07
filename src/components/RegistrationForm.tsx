@@ -3,7 +3,8 @@
 
 import { useState, useEffect } from 'react';
 import { X, Loader, CheckCircle } from 'lucide-react';
-import { Registration, Department, DEPARTMENTS } from '../types';
+import type { Registration, Department } from '../types';
+import { DEPARTMENTS } from '../types';
 import { saveRegistration, validateRegistration } from '../firebaseUtils';
 import { TECHNICAL_EVENTS, NON_TECHNICAL_EVENTS, PAPER_PRESENTATION_TOPICS } from '../data';
 import './RegistrationForm.css';

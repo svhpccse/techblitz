@@ -1,7 +1,7 @@
 // Footer Component
 // Displays footer information and social links
 
-import { Mail, Phone, Mappin, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe } from 'lucide-react';
 import './Footer.css';
 
 export const Footer = () => {
@@ -35,7 +35,7 @@ export const Footer = () => {
                 <span>info@svhpc.in</span>
               </a>
               <div className="contact-item">
-                <Mappin size={16} />
+                <MapPin size={16} />
                 <span>Gobichettipalayam, Erode 638 455</span>
               </div>
             </div>

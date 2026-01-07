@@ -3,7 +3,8 @@
 
 import { db } from './firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { Registration, FIRESTORE_COLLECTIONS, NON_TECHNICAL_COLLECTION } from './types';
+import type { Registration } from './types';
+import { FIRESTORE_COLLECTIONS, NON_TECHNICAL_COLLECTION } from './types';
 
 /**
  * Save registration to Firestore

@@ -2,7 +2,7 @@
 // Displays contact information for department coordinators
 
 import { DEPARTMENTS_INFO } from '../data';
-import { Phone, Mail } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import './Coordinators.css';
 
 export const Coordinators = () => {

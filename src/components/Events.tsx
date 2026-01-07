@@ -2,7 +2,7 @@
 // Shows all technical events organized by department
 
 import { TECHNICAL_EVENTS, DEPARTMENTS_INFO, PAPER_PRESENTATION_TOPICS } from '../data';
-import { Department } from '../types';
+import type { Department } from '../types';
 import './Events.css';
 import { ChevronRight } from 'lucide-react';
 

@@ -1,73 +1,222 @@
-# React + TypeScript + Vite
+# TECH BLITZ 2K26 - Event Registration Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive event registration website for TECH BLITZ 2K26, a state-level technical symposium hosted by Shree Venkateshwara Hi-Tech Polytechnic College.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ **Modern & Responsive Design**
+- Purple + Gold theme matching the event branding
+- Fully responsive across mobile, tablet, and desktop
+- Smooth animations and transitions
+- Mobile-first approach
 
-## React Compiler
+🎯 **Event Management**
+- Department-wise event organization
+- Technical, Paper Presentation, and Non-Technical events
+- Dynamic event selection based on department
+- Paper presentation topics by department
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📝 **Registration System**
+- Comprehensive registration form with validation
+- Real-time form validation
+- Success confirmation page
+- Loading states and error handling
 
-## Expanding the ESLint configuration
+🔥 **Firebase Integration**
+- Firestore database for secure data storage
+- Department-specific collections
+- Server-side timestamps
+- Real-time data persistence
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+⏱️ **Countdown Timer**
+- Live countdown to registration deadline
+- Animated display with day/hour/minute/second breakdown
+- Responsive timer for all screen sizes
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+👥 **Coordinator Information**
+- Contact details for department coordinators
+- Staff and student coordinators listed
+- Direct phone links for easy contact
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Frontend Framework**: React 19 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Custom CSS with responsive design
+- **Backend**: Firebase Firestore
+- **Icons**: Lucide React
+- **State Management**: React Hooks
+
+## Project Structure
+
+```
+src/
+├── components/           # React components
+│   ├── Header.tsx       # Navigation header
+│   ├── Hero.tsx         # Hero section
+│   ├── Events.tsx       # Events display
+│   ├── Coordinators.tsx # Coordinator info
+│   ├── RegistrationForm.tsx  # Registration modal
+│   ├── CountdownTimer.tsx    # Countdown timer
+│   ├── Footer.tsx       # Footer
+│   └── *.css            # Component styles
+├── types.ts             # TypeScript type definitions
+├── data.ts              # Event data and configurations
+├── firebase.ts          # Firebase configuration
+├── firebaseUtils.ts     # Firebase utility functions
+├── index.css            # Global styles
+├── App.tsx              # Main app component
+├── App.css              # App container styles
+└── main.tsx             # React entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Firebase project with Firestore enabled
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd techblitz
 ```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Configure Firebase
+
+Create a `.env` file in the root directory with your Firebase credentials:
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+**⚠️ Important**: Never commit the `.env` file to version control. It's already added to `.gitignore`.
+
+A template file `.env.example` is provided for reference.
+
+### 4. Create Firestore Collections
+
+In your Firebase Console, create the following collections in Firestore:
+
+- `registrations_auto_mech`
+- `registrations_cse_aiml`
+- `registrations_eee_ece`
+- `registrations_civil`
+- `registrations_mlt`
+- `registrations_non_technical`
+
+### 5. Run Development Server
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+
+## Deployment
+
+### Deploy on GitHub Pages
+```bash
+npm run build
+# Deploy the dist/ folder to GitHub Pages
+```
+
+### Deploy on Firebase Hosting
+```bash
+npm install -g firebase-tools
+firebase login
+firebase init hosting
+npm run build
+firebase deploy
+```
+
+## Firebase Data Structure
+
+Each registration document contains:
+```json
+{
+  "name": "string",
+  "college": "string",
+  "department": "auto_mech|cse_aiml|eee_ece|civil|mlt",
+  "year": "1|2|3|4",
+  "phone": "string",
+  "email": "string",
+  "eventType": "technical|paper_presentation|non_technical",
+  "eventName": "string",
+  "timestamp": "server_timestamp"
+}
+```
+
+## Features Documentation
+
+### Registration Form
+- **Validation**: Client-side validation for all fields
+- **Dynamic Events**: Event list updates based on selected department and event type
+- **Error Handling**: Clear error messages for validation failures
+- **Success Page**: Confirmation page after successful registration
+
+### Events Section
+- **Department Cards**: Visual organization by department
+- **Event Categories**: Technical events, paper presentation topics
+- **Quick Registration**: Direct registration from event card
+
+### Countdown Timer
+- **Live Updates**: Updates every second
+- **Responsive**: Adapts to all screen sizes
+- **Deadline**: Registration closes on 27.01.2026
+
+### Mobile Responsive
+- Mobile hamburger menu navigation
+- Touch-friendly buttons and forms
+- Optimized font sizes and spacing
+- Smooth animations on mobile devices
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Android)
+
+## Event Details
+
+- **Event Name**: TECH BLITZ 2K26
+- **Type**: State Level Technical Symposium
+- **Date**: 30 January 2026
+- **Registration Fee**: ₹150 per head
+- **Prize Worth**: 3 Lakhs
+- **Registration Closes**: 27.01.2026
+- **Intimation Date**: 28.01.2026
+
+## Contact
+
+For technical issues or inquiries:
+- Email: info@svhpc.in
+- Phone: +91 8870908071
+
+## License
+
+This project is licensed under the MIT License.
+
+## Credits
+
+Built for SHREE VENKATESHWARA HI-TECH POLYTECHNIC COLLEGE

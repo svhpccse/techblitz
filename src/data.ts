@@ -1,7 +1,7 @@
 // TECH BLITZ 2K26 - Complete Event Data
 // Contains all events, paper topics, coordinators, and departments
 
-import { Event, DepartmentInfo, Department } from './types';
+import type { Event, DepartmentInfo, Department } from './types';
 
 // ============================================
 // TECHNICAL EVENTS (Department-wise)
