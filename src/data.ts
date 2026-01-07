@@ -205,7 +205,7 @@ export const DEPARTMENTS_INFO: DepartmentInfo[] = [
     ],
     students: [
       {
-        name: 'S. Dathish Kumar',
+        name: 'S. Sathish Kumar',
         role: 'student',
         phone: '8012481721',
         department: 'eee_ece'
