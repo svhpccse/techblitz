@@ -1,4 +1,4 @@
-/* Countdown Timer Styles - Premium Purple & Gold Theme */
+/* Countdown Timer Styles - Black & Bright Yellow Theme */
 
 .countdown-container {
   text-align: center;
@@ -8,11 +8,12 @@
 
 .countdown-container h3 {
   font-size: var(--font-size-xl);
-  color: var(--bright-gold);
+  color: var(--bright-yellow);
   margin-bottom: 1rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .countdown-timer {
@@ -21,15 +22,16 @@
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  background: linear-gradient(135deg, var(--deep-violet), var(--dark-royal-purple));
+  background: linear-gradient(135deg, var(--dark-gray), var(--secondary-black));
   padding: 2rem 1rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.2);
+  border: 2px solid var(--bright-yellow);
 }
 
 .countdown-item {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 215, 0, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
   border-radius: 0.75rem;
   padding: 1rem;
   min-width: 80px;
@@ -39,22 +41,22 @@
 .countdown-value {
   font-size: 2rem;
   font-weight: 900;
-  color: var(--bright-gold);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--bright-yellow);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
   line-height: 1;
   margin-bottom: 0.5rem;
 }
 
 .countdown-label {
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
 }
 
 .countdown-separator {
-  color: var(--gold);
+  color: var(--electric-yellow);
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 0.5rem;

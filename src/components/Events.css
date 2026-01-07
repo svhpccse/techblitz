@@ -1,8 +1,9 @@
-/* Events Section Styles - Premium Purple & Gold Theme */
+/* Events Section Styles - Black & Bright Yellow Theme */
 
 .events-section {
   padding: 4rem 1rem;
-  background: linear-gradient(180deg, var(--white) 0%, #fafafa 100%);
+  background: linear-gradient(180deg, var(--secondary-black) 0%, var(--primary-black) 50%, var(--secondary-black) 100%);
+  position: relative;
 }
 
 /* Departments Grid */
@@ -15,30 +16,57 @@
 
 /* Department Card */
 .department-card {
-  background: var(--white);
+  background: linear-gradient(145deg, var(--dark-gray), var(--medium-gray));
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 2px solid var(--lavender-grey);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.2);
+  border: 2px solid var(--bright-yellow);
   transition: var(--transition);
   animation: slideUp 0.6s ease-out;
+  position: relative;
+}
+
+.department-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--bright-yellow), var(--electric-yellow), var(--bright-yellow));
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
 .department-card:hover {
-  box-shadow: 0 15px 40px rgba(227, 190, 94, 0.3);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.3);
   transform: translateY(-8px);
-  border-color: var(--bright-gold);
+  border-color: var(--electric-yellow);
+}
+
+.department-card:hover::before {
+  opacity: 0.7;
+  animation: border-glow 2s linear infinite;
+}
+
+@keyframes border-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
 /* Department Header */
 .dept-header {
-  background: linear-gradient(135deg, var(--deep-violet), var(--dark-royal-purple));
-  color: var(--bright-gold);
+  background: linear-gradient(135deg, var(--dark-gray), var(--secondary-black));
+  color: var(--bright-yellow);
   padding: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 3px solid var(--bright-gold);
+  border-bottom: 3px solid var(--bright-yellow);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 -2px 10px rgba(255, 215, 0, 0.2);
+  position: relative;
 }
 
 .dept-name {
@@ -52,7 +80,7 @@
 
 .dept-icon {
   font-size: 1.75rem;
-  color: var(--neon-green);
+  color: var(--electric-yellow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,12 +102,12 @@
 .category-label {
   font-size: var(--font-size-sm);
   font-weight: 800;
-  color: var(--subheading);
+  color: var(--bright-yellow);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--lavender-grey);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -89,7 +117,7 @@
   content: '\f155';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  color: var(--bright-gold);
+  color: var(--electric-yellow);
 }
 
 /* Event Item */
@@ -100,22 +128,40 @@
   width: 100%;
   padding: 0.875rem;
   margin-bottom: 0.5rem;
-  background-color: #f9f9f9;
-  border: 2px solid var(--lavender-grey);
+  background: rgba(10, 10, 10, 0.5);
+  border: 2px solid rgba(255, 215, 0, 0.2);
   border-radius: 0.5rem;
   cursor: pointer;
   transition: var(--transition);
   font-size: var(--font-size-sm);
   font-weight: 700;
-  color: var(--dark-gray);
+  color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.event-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--bright-yellow), var(--electric-yellow));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .event-item:hover {
-  background-color: rgba(227, 190, 94, 0.1);
-  color: var(--subheading);
-  border-color: var(--bright-gold);
-  transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(227, 190, 94, 0.2);
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.2), rgba(255, 237, 78, 0.1));
+  color: var(--bright-yellow);
+  border-color: var(--bright-yellow);
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3), inset 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.event-item:hover::before {
+  opacity: 1;
 }
 
 .event-name {
@@ -135,29 +181,29 @@
   align-items: flex-start;
   gap: 0.75rem;
   padding: 1rem;
-  background-color: #f9f9f9;
-  border: 2px solid var(--lavender-grey);
+  background-color: rgba(10, 10, 10, 0.6);
+  border: 2px solid rgba(255, 215, 0, 0.2);
   border-radius: 0.5rem;
   cursor: pointer;
   transition: var(--transition);
   text-align: left;
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: var(--dark-gray);
+  color: var(--text-secondary);
 }
 
 .paper-item:hover {
-  background: linear-gradient(135deg, rgba(227, 190, 94, 0.1), rgba(156, 212, 83, 0.1));
-  color: var(--subheading);
-  border-color: var(--bright-gold);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 237, 78, 0.1));
+  color: var(--bright-yellow);
+  border-color: var(--bright-yellow);
   transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(227, 190, 94, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .paper-icon {
   font-size: 1.25rem;
   flex-shrink: 0;
-  color: var(--bright-gold);
+  color: var(--electric-yellow);
 }
 
 .paper-topic {
@@ -169,19 +215,20 @@
 .non-technical-section {
   margin-top: 4rem;
   padding-top: 3rem;
-  border-top: 3px solid var(--bright-gold);
+  border-top: 3px solid var(--bright-yellow);
 }
 
 .non-tech-title {
   text-align: center;
   font-size: var(--font-size-2xl);
-  color: var(--main-heading);
+  color: var(--bright-yellow);
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
   width: 100%;
   font-weight: 900;
   letter-spacing: 0.05em;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .non-tech-title::after {
@@ -192,8 +239,9 @@
   transform: translateX(-50%);
   width: 150px;
   height: 4px;
-  background: linear-gradient(90deg, var(--bright-gold), var(--neon-green));
+  background: linear-gradient(90deg, var(--bright-yellow), var(--electric-yellow));
   border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .non-tech-events {
@@ -204,39 +252,39 @@
 
 /* Event Card */
 .event-card {
-  background: var(--white);
+  background: linear-gradient(145deg, var(--dark-gray), var(--medium-gray));
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
-  box-shadow: var(--shadow-lg);
-  border: 2px solid var(--lavender-grey);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
   transition: var(--transition);
   animation: slideUp 0.8s ease-out;
 }
 
 .event-card:hover {
-  box-shadow: 0 15px 40px rgba(227, 190, 94, 0.3);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
   transform: translateY(-8px);
-  border-color: var(--bright-gold);
+  border-color: var(--bright-yellow);
 }
 
 .event-card-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--neon-green);
+  color: var(--bright-yellow);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: rgba(156, 212, 83, 0.1);
+  background: rgba(255, 215, 0, 0.1);
   border-radius: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .event-card h4 {
-  color: var(--subheading);
+  color: var(--bright-yellow);
   margin-bottom: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -244,7 +292,7 @@
 }
 
 .event-card p {
-  color: var(--dark-gray);
+  color: var(--text-secondary);
   font-size: var(--font-size-sm);
   margin-bottom: 1.5rem;
   line-height: 1.6;

@@ -1,10 +1,10 @@
-/* Coordinators.css */
+/* Coordinators.css - Black & Bright Yellow Theme */
 
 /* Import Font Awesome via CDN */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 .coordinators-section {
-  background-color: #1F1320;
+  background: linear-gradient(180deg, var(--primary-black) 0%, var(--secondary-black) 100%);
   padding: 4rem 0;
   min-height: 100vh;
 }
@@ -20,19 +20,20 @@
   text-align: center;
   margin-bottom: 3rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid #26706E;
+  border-bottom: 2px solid var(--bright-yellow);
 }
 
 .section-title {
-  color: #E3BE5E;
+  color: var(--bright-yellow);
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .section-subtitle {
-  color: #EDE2BA;
+  color: var(--text-secondary);
   font-size: 1.1rem;
   opacity: 0.9;
 }
@@ -46,26 +47,27 @@
 }
 
 .coordinator-card {
-  background: linear-gradient(145deg, #331347, #431B50);
+  background: linear-gradient(145deg, var(--dark-gray), var(--medium-gray));
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #673D47;
+  border: 2px solid rgba(255, 215, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .coordinator-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(227, 190, 94, 0.15);
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+  border-color: var(--bright-yellow);
 }
 
 .coord-header {
-  background: #431B50;
+  background: linear-gradient(135deg, var(--secondary-black), var(--dark-gray));
   padding: 1.25rem;
-  border-bottom: 1px solid #8F7443;
+  border-bottom: 2px solid var(--bright-yellow);
 }
 
 .coord-dept {
-  color: #D2872C;
+  color: var(--bright-yellow);
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
@@ -85,14 +87,14 @@
 }
 
 .coord-role {
-  color: #9CD453;
+  color: var(--electric-yellow);
   font-size: 0.95rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #26706E;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .coordinator-item {

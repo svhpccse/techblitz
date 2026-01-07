@@ -1,11 +1,11 @@
-/* Footer Styles - Premium Purple & Gold Theme */
+/* Footer Styles - Black & Bright Yellow Theme */
 
 .footer {
-  background: linear-gradient(135deg, var(--dark-royal-purple), var(--deep-violet));
-  color: var(--white);
+  background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+  color: var(--text-secondary);
   padding: 4rem 1rem 2rem;
   margin-top: 4rem;
-  border-top: 3px solid var(--bright-gold);
+  border-top: 3px solid var(--bright-yellow);
 }
 
 /* Footer Grid */
@@ -27,15 +27,15 @@
   font-size: var(--font-size-lg);
   font-weight: 800;
   margin-bottom: 1rem;
-  color: var(--bright-gold);
-  border-bottom: 2px solid var(--bright-gold);
+  color: var(--bright-yellow);
+  border-bottom: 2px solid var(--bright-yellow);
   padding-bottom: 0.5rem;
 }
 
 .footer-section p {
   font-size: var(--font-size-sm);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -51,19 +51,19 @@
   align-items: flex-start;
   gap: 0.75rem;
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .contact-item:hover {
-  color: var(--gold);
+  color: var(--bright-yellow);
   transform: translateX(4px);
 }
 
 .contact-item > svg {
   flex-shrink: 0;
-  color: var(--gold);
+  color: var(--electric-yellow);
   margin-top: 2px;
 }
 
@@ -84,14 +84,14 @@
 .footer-links a,
 .footer-links span {
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: var(--transition);
   display: block;
 }
 
 .footer-links a:hover {
-  color: var(--gold);
+  color: var(--bright-yellow);
   transform: translateX(4px);
 }
 

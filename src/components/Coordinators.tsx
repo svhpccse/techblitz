@@ -2,7 +2,7 @@
 // Displays contact information for department coordinators
 
 import { DEPARTMENTS_INFO } from '../data';
-import { Phone, User, GraduationCap, QrCode, ExternalLink } from 'lucide-react';
+import { Phone, User, GraduationCap } from 'lucide-react';
 import './Coordinators.css';
 
 export const Coordinators = () => {
@@ -68,21 +68,7 @@ export const Coordinators = () => {
           ))}
         </div>
 
-        {/* QR Code Section */}
-        <div className="qr-section">
-          <h3>Quick Registration</h3>
-          <p>Scan the QR code to register or visit our website</p>
-          <div className="qr-placeholder">
-            <div className="qr-icon">
-              <QrCode size={48} />
-            </div>
-            <p>QR Code for Registration</p>
-            <div className="qr-link">
-              <p className="qr-subtitle">www.svhpc.in</p>
-              <ExternalLink size={14} />
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
