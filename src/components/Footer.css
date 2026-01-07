@@ -1,11 +1,11 @@
-/* Footer Styles */
+/* Footer Styles - Premium Purple & Gold Theme */
 
 .footer {
-  background: linear-gradient(135deg, var(--very-dark), var(--primary-purple));
+  background: linear-gradient(135deg, var(--dark-royal-purple), var(--deep-violet));
   color: var(--white);
   padding: 4rem 1rem 2rem;
   margin-top: 4rem;
-  border-top: 3px solid var(--gold);
+  border-top: 3px solid var(--bright-gold);
 }
 
 /* Footer Grid */
@@ -25,10 +25,10 @@
 
 .footer-section h4 {
   font-size: var(--font-size-lg);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1rem;
-  color: var(--gold);
-  border-bottom: 2px solid var(--gold);
+  color: var(--bright-gold);
+  border-bottom: 2px solid var(--bright-gold);
   padding-bottom: 0.5rem;
 }
 

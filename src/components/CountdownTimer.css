@@ -1,4 +1,4 @@
-/* Countdown Timer Styles */
+/* Countdown Timer Styles - Premium Purple & Gold Theme */
 
 .countdown-container {
   text-align: center;
@@ -8,8 +8,11 @@
 
 .countdown-container h3 {
   font-size: var(--font-size-xl);
-  color: var(--primary-purple);
+  color: var(--bright-gold);
   margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .countdown-timer {
@@ -18,7 +21,7 @@
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+  background: linear-gradient(135deg, var(--deep-violet), var(--dark-royal-purple));
   padding: 2rem 1rem;
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
@@ -35,8 +38,9 @@
 
 .countdown-value {
   font-size: 2rem;
-  font-weight: 700;
-  color: var(--gold);
+  font-weight: 900;
+  color: var(--bright-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1;
   margin-bottom: 0.5rem;
 }

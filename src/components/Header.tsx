@@ -26,7 +26,9 @@ export const Header = ({ onRegisterClick }: HeaderProps) => {
           {/* Logo / Branding */}
           <div className="navbar-brand">
             <div className="logo">
-              <div className="logo-icon">⚡</div>
+              <div className="logo-icon">
+                <i className="fas fa-bolt"></i>
+              </div>
               <div className="logo-text">
                 <div className="logo-main">TECH BLITZ</div>
                 <div className="logo-sub">2K26</div>

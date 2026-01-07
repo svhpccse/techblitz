@@ -1,8 +1,8 @@
-/* Events Section Styles */
+/* Events Section Styles - Premium Purple & Gold Theme */
 
 .events-section {
   padding: 4rem 1rem;
-  background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+  background: linear-gradient(180deg, var(--white) 0%, #fafafa 100%);
 }
 
 /* Departments Grid */
@@ -16,39 +16,305 @@
 /* Department Card */
 .department-card {
   background: var(--white);
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--light-gray);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--lavender-grey);
   transition: var(--transition);
   animation: slideUp 0.6s ease-out;
 }
 
 .department-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 15px 40px rgba(227, 190, 94, 0.3);
   transform: translateY(-8px);
-  border-color: var(--primary-purple);
+  border-color: var(--bright-gold);
 }
 
 /* Department Header */
 .dept-header {
-  background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
-  color: var(--white);
-  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--deep-violet), var(--dark-royal-purple));
+  color: var(--bright-gold);
+  padding: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 3px solid var(--bright-gold);
 }
 
 .dept-name {
   font-size: var(--font-size-lg);
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .dept-icon {
   font-size: 1.75rem;
+  color: var(--neon-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Events List */
+.events-list {
+  padding: 1.5rem;
+}
+
+.events-category {
+  margin-bottom: 1.5rem;
+}
+
+.events-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-label {
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  color: var(--subheading);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--lavender-grey);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-label::before {
+  content: '\f155';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--bright-gold);
+}
+
+/* Event Item */
+.event-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.875rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+  border: 2px solid var(--lavender-grey);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--dark-gray);
+}
+
+.event-item:hover {
+  background-color: rgba(227, 190, 94, 0.1);
+  color: var(--subheading);
+  border-color: var(--bright-gold);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(227, 190, 94, 0.2);
+}
+
+.event-name {
+  flex: 1;
+  text-align: left;
+}
+
+/* Papers List */
+.papers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.paper-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 2px solid var(--lavender-grey);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+.paper-item:hover {
+  background: linear-gradient(135deg, rgba(227, 190, 94, 0.1), rgba(156, 212, 83, 0.1));
+  color: var(--subheading);
+  border-color: var(--bright-gold);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(227, 190, 94, 0.2);
+}
+
+.paper-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  color: var(--bright-gold);
+}
+
+.paper-topic {
+  flex: 1;
+  line-height: 1.5;
+}
+
+/* Non-Technical Section */
+.non-technical-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 3px solid var(--bright-gold);
+}
+
+.non-tech-title {
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  color: var(--main-heading);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.non-tech-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--bright-gold), var(--neon-green));
+  border-radius: 2px;
+}
+
+.non-tech-events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Event Card */
+.event-card {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--lavender-grey);
+  transition: var(--transition);
+  animation: slideUp 0.8s ease-out;
+}
+
+.event-card:hover {
+  box-shadow: 0 15px 40px rgba(227, 190, 94, 0.3);
+  transform: translateY(-8px);
+  border-color: var(--bright-gold);
+}
+
+.event-card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--neon-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(156, 212, 83, 0.1);
+  border-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-card h4 {
+  color: var(--subheading);
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.event-card p {
+  color: var(--dark-gray);
+  font-size: var(--font-size-sm);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .events-section {
+    padding: 2rem 1rem;
+  }
+
+  .departments-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .non-tech-events {
+    grid-template-columns: 1fr;
+  }
+
+  .dept-header {
+    padding: 1.25rem;
+  }
+
+  .dept-name {
+    font-size: var(--font-size-base);
+  }
+
+  .dept-icon {
+    font-size: 1.5rem;
+  }
+
+  .events-list {
+    padding: 1rem;
+  }
+
+  .event-item,
+  .paper-item {
+    padding: 0.75rem;
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .events-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .departments-grid {
+    gap: 1rem;
+  }
+
+  .event-card {
+    padding: 1.5rem;
+  }
+
+  .event-card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    width: 70px;
+    height: 70px;
+  }
+
+  .category-label {
+    font-size: var(--font-size-xs);
+  }
+
+  .non-tech-title {
+    font-size: var(--font-size-xl);
+  }
 }
 
 /* Events List */

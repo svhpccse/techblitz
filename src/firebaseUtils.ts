@@ -32,6 +32,7 @@ export const saveRegistration = async (registration: Omit<Registration, 'timesta
       email: registration.email,
       eventType: registration.eventType,
       eventName: registration.eventName,
+      paymentScreenshot: registration.paymentScreenshot || null,
       timestamp: serverTimestamp()
     };
 

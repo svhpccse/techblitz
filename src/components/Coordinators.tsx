@@ -2,7 +2,7 @@
 // Displays contact information for department coordinators
 
 import { DEPARTMENTS_INFO } from '../data';
-import { Phone } from 'lucide-react';
+import { Phone, User, GraduationCap, QrCode, ExternalLink } from 'lucide-react';
 import './Coordinators.css';
 
 export const Coordinators = () => {
@@ -31,7 +31,9 @@ export const Coordinators = () => {
                   <p className="coord-role">Faculty Coordinator</p>
                   {dept.staff.map((staff) => (
                     <div key={staff.name} className="coordinator-item">
-                      <div className="coordinator-avatar">👨‍🏫</div>
+                      <div className="coordinator-avatar">
+                        <User size={20} />
+                      </div>
                       <div className="coordinator-info">
                         <p className="coordinator-name">{staff.name}</p>
                         <a href={`tel:${staff.phone}`} className="coordinator-contact">
@@ -48,7 +50,9 @@ export const Coordinators = () => {
                   <p className="coord-role">Student Coordinators</p>
                   {dept.students.map((student) => (
                     <div key={student.name} className="coordinator-item">
-                      <div className="coordinator-avatar">👤</div>
+                      <div className="coordinator-avatar">
+                        <GraduationCap size={20} />
+                      </div>
                       <div className="coordinator-info">
                         <p className="coordinator-name">{student.name}</p>
                         <a href={`tel:${student.phone}`} className="coordinator-contact">
@@ -69,9 +73,14 @@ export const Coordinators = () => {
           <h3>Quick Registration</h3>
           <p>Scan the QR code to register or visit our website</p>
           <div className="qr-placeholder">
-            <div className="qr-icon">📱</div>
+            <div className="qr-icon">
+              <QrCode size={48} />
+            </div>
             <p>QR Code for Registration</p>
-            <p className="qr-subtitle">www.svhpc.in</p>
+            <div className="qr-link">
+              <p className="qr-subtitle">www.svhpc.in</p>
+              <ExternalLink size={14} />
+            </div>
           </div>
         </div>
       </div>

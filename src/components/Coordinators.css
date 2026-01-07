@@ -1,50 +1,77 @@
-/* Coordinators Section Styles */
+/* Coordinators.css */
+
+/* Import Font Awesome via CDN */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 .coordinators-section {
-  padding: 4rem 1rem;
-  background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
+  background-color: #1F1320;
+  padding: 4rem 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #26706E;
+}
+
+.section-title {
+  color: #E3BE5E;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+  color: #EDE2BA;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 /* Coordinators Grid */
 .coordinators-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
 }
 
-/* Coordinator Card */
 .coordinator-card {
-  background: var(--white);
-  border-radius: 0.75rem;
+  background: linear-gradient(145deg, #331347, #431B50);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--light-gray);
-  transition: var(--transition);
-  animation: slideUp 0.6s ease-out;
+  border: 1px solid #673D47;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .coordinator-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-8px);
-  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(227, 190, 94, 0.15);
 }
 
-/* Coordinator Header */
 .coord-header {
-  background: linear-gradient(135deg, var(--gold), var(--dark-gold));
-  color: var(--white);
+  background: #431B50;
   padding: 1.25rem;
+  border-bottom: 1px solid #8F7443;
 }
 
 .coord-dept {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
+  color: #D2872C;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin: 0;
-  letter-spacing: 0.05em;
+  text-align: center;
 }
 
-/* Coordinator Body */
 .coord-body {
   padding: 1.5rem;
 }
@@ -58,39 +85,44 @@
 }
 
 .coord-role {
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: var(--primary-purple);
+  color: #9CD453;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--light-gray);
+  border-bottom: 1px solid #26706E;
 }
 
-/* Coordinator Item */
 .coordinator-item {
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
   padding: 0.75rem;
-  margin-bottom: 0.5rem;
-  background-color: var(--off-white);
-  border-radius: 0.375rem;
-  transition: var(--transition);
+  background: rgba(31, 19, 32, 0.5);
+  border-radius: 8px;
+  border-left: 3px solid #26706E;
 }
 
-.coordinator-item:hover {
-  background-color: var(--light-gold);
+.coordinator-item:last-child {
+  margin-bottom: 0;
 }
 
 .coordinator-avatar {
-  font-size: 1.75rem;
-  flex-shrink: 0;
-  width: 45px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8F7443, #E3BE5E);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.coordinator-avatar svg {
+  color: #1F1320;
 }
 
 .coordinator-info {
@@ -98,152 +130,155 @@
 }
 
 .coordinator-name {
-  font-weight: 600;
-  color: var(--very-dark);
+  color: #EDE2BA;
+  font-weight: 500;
   margin: 0 0 0.25rem 0;
-  font-size: var(--font-size-sm);
+  font-size: 1rem;
 }
 
 .coordinator-contact {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--primary-purple);
-  font-size: var(--font-size-xs);
+  color: #9CD453;
   text-decoration: none;
-  transition: var(--transition);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
 .coordinator-contact:hover {
-  color: var(--gold);
+  color: #E3BE5E;
+}
+
+.coordinator-contact svg {
+  color: #26706E;
 }
 
 /* QR Code Section */
 .qr-section {
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 2px solid var(--light-gray);
+  background: #331347;
+  border-radius: 12px;
+  padding: 2.5rem;
   text-align: center;
+  border: 1px solid #673D47;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .qr-section h3 {
-  font-size: var(--font-size-2xl);
-  color: var(--primary-purple);
-  margin-bottom: 0.5rem;
+  color: #E3BE5E;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .qr-section > p {
-  color: var(--dark-gray);
+  color: #EDE2BA;
   margin-bottom: 2rem;
+  font-size: 1.05rem;
 }
 
 .qr-placeholder {
-  background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
-  border-radius: 1rem;
-  padding: 3rem 2rem;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow-lg);
-  color: var(--white);
-  border: 3px dashed rgba(255, 255, 255, 0.2);
+  background: #1F1320;
+  border-radius: 10px;
+  padding: 2rem;
+  border: 2px dashed #8F7443;
 }
 
 .qr-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #431B50, #673D47);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #26706E;
 }
 
-.qr-placeholder p {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
+.qr-icon svg {
+  color: #9CD453;
+  width: 48px;
+  height: 48px;
 }
 
-.qr-subtitle {
-  font-size: var(--font-size-sm);
-  opacity: 0.9;
-  margin: 0;
+.qr-placeholder > p {
+  color: #EDE2BA;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.qr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #9CD453;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.qr-link:hover {
+  color: #E3BE5E;
+}
+
+.qr-link svg {
+  color: #26706E;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .coordinators-section {
-    padding: 2rem 1rem;
+  .container {
+    padding: 0 1rem;
   }
-
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
   .coordinators-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
-  .coord-body {
-    padding: 1rem;
-  }
-
-  .coordinator-item {
-    padding: 0.5rem;
-  }
-
-  .coordinator-avatar {
-    font-size: 1.5rem;
-    width: 40px;
-  }
-
-  .coordinator-name {
-    font-size: var(--font-size-xs);
-  }
-
-  .qr-placeholder {
+  
+  .qr-section {
     padding: 2rem 1.5rem;
   }
-
+  
   .qr-icon {
-    font-size: 3rem;
-    margin-bottom: 0.75rem;
+    width: 80px;
+    height: 80px;
   }
-
-  .qr-placeholder p {
-    font-size: var(--font-size-base);
+  
+  .qr-icon svg {
+    width: 36px;
+    height: 36px;
   }
 }
 
 @media (max-width: 480px) {
   .coordinators-section {
-    padding: 1.5rem 0.5rem;
+    padding: 2.5rem 0;
   }
-
-  .coordinators-grid {
-    gap: 1rem;
+  
+  .section-title {
+    font-size: 1.75rem;
   }
-
-  .coordinator-card {
-    border-radius: 0.5rem;
+  
+  .coord-dept {
+    font-size: 1.3rem;
   }
-
-  .coord-header {
-    padding: 1rem;
-  }
-
+  
   .coordinator-item {
-    margin-bottom: 0.25rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
   }
-
-  .qr-section h3 {
-    font-size: var(--font-size-xl);
-  }
-
-  .qr-placeholder {
-    padding: 1.5rem 1rem;
-  }
-
-  .qr-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .qr-placeholder p {
-    font-size: var(--font-size-sm);
+  
+  .coordinator-avatar {
+    width: 50px;
+    height: 50px;
   }
 }
