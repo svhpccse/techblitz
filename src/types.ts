@@ -12,6 +12,7 @@ export interface Registration {
   email: string;
   eventType: EventType;
   eventName: string;
+  paymentScreenshot?: string; // Base64 encoded image
   timestamp: Date;
 }
 

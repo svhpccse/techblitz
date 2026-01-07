@@ -8,3 +8,6 @@ export { default as Coordinators } from './Coordinators';
 export { default as RegistrationForm } from './RegistrationForm';
 export { default as Footer } from './Footer';
 export { default as CountdownTimer } from './CountdownTimer';
+export { default as Admin } from './Admin';
+export { default as AdminPage } from './AdminPage';
+export { default as AdminAuth } from './AdminAuth';

@@ -2,10 +2,11 @@
 // Complete form with validation and Firestore integration
 
 import { useState, useEffect } from 'react';
-import { X, Loader, CheckCircle } from 'lucide-react';
+import { X, Loader, CheckCircle, Upload } from 'lucide-react';
 import type { Registration, Department } from '../types';
 import { DEPARTMENTS } from '../types';
 import { saveRegistration, validateRegistration } from '../firebaseUtils';
+import { uploadPaymentScreenshot } from '../cloudinaryUtils';
 import { TECHNICAL_EVENTS, NON_TECHNICAL_EVENTS, PAPER_PRESENTATION_TOPICS } from '../data';
 import './RegistrationForm.css';
 
@@ -14,6 +15,9 @@ interface RegistrationFormProps {
   onClose: () => void;
   initialEvent?: { name: string; department: Department };
 }
+
+// QR Code Image (Static QR code - replace with your actual QR code image)
+const QR_CODE_IMAGE = 'https://via.placeholder.com/200x200?text=Scan+to+Pay';
 
 export const RegistrationForm = ({ isOpen, onClose, initialEvent }: RegistrationFormProps) => {
   const [formData, setFormData] = useState<Omit<Registration, 'timestamp'>>({
@@ -24,13 +28,17 @@ export const RegistrationForm = ({ isOpen, onClose, initialEvent }: Registration
     phone: '',
     email: '',
     eventType: 'technical',
-    eventName: initialEvent?.name || ''
+    eventName: initialEvent?.name || '',
+    paymentScreenshot: undefined
   });
 
+  const [paymentScreenshotPreview, setPaymentScreenshotPreview] = useState<string | null>(null);
+  const [uploadingScreenshot, setUploadingScreenshot] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState('');
+  const [showPaymentSection, setShowPaymentSection] = useState(false);
 
   // Update form when initialEvent changes
   useEffect(() => {
@@ -72,10 +80,61 @@ export const RegistrationForm = ({ isOpen, onClose, initialEvent }: Registration
     setFormError('');
   };
 
+  const handlePaymentScreenshotChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Check file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        setFormError('File size must be less than 5MB');
+        return;
+      }
+
+      // Check file type
+      if (!file.type.startsWith('image/')) {
+        setFormError('Please upload an image file');
+        return;
+      }
+
+      // Create preview
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPaymentScreenshotPreview(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+
+      // Upload to Cloudinary
+      uploadToCloudinary(file);
+      setFormError('');
+    }
+  };
+
+  const uploadToCloudinary = async (file: File) => {
+    setUploadingScreenshot(true);
+    try {
+      const url = await uploadPaymentScreenshot(file);
+      setFormData((prev) => ({
+        ...prev,
+        paymentScreenshot: url
+      }));
+      setFormError('');
+    } catch (error: any) {
+      setFormError('Failed to upload payment screenshot. Please try again.');
+      console.error('Cloudinary upload error:', error);
+    } finally {
+      setUploadingScreenshot(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError('');
     setErrors([]);
+
+    // Check if payment screenshot is uploaded
+    if (!formData.paymentScreenshot) {
+      setFormError('Please upload a screenshot of your payment');
+      return;
+    }
 
     // Validate form
     const validation = validateRegistration(formData);
@@ -100,8 +159,11 @@ export const RegistrationForm = ({ isOpen, onClose, initialEvent }: Registration
             phone: '',
             email: '',
             eventType: 'technical',
-            eventName: ''
+            eventName: '',
+            paymentScreenshot: undefined
           });
+          setPaymentScreenshotPreview(null);
+          setShowPaymentSection(false);
           onClose();
         }, 3000);
       } else {
@@ -206,7 +268,6 @@ export const RegistrationForm = ({ isOpen, onClose, initialEvent }: Registration
                     <option value="1">1st Year</option>
                     <option value="2">2nd Year</option>
                     <option value="3">3rd Year</option>
-                    <option value="4">4th Year</option>
                   </select>
                 </div>
               </div>
@@ -280,11 +341,72 @@ export const RegistrationForm = ({ isOpen, onClose, initialEvent }: Registration
                 )}
               </div>
 
+              {/* Payment Section */}
+              <div className="payment-section">
+                <button
+                  type="button"
+                  onClick={() => setShowPaymentSection(!showPaymentSection)}
+                  className="payment-toggle-btn"
+                >
+                  {showPaymentSection ? '▼' : '▶'} Complete Payment
+                </button>
+
+                {showPaymentSection && (
+                  <div className="payment-content">
+                    {/* QR Code */}
+                    <div className="qr-code-container">
+                      <h4>Scan to Pay</h4>
+                      <p>Registration Fee: ₹150</p>
+                      <img src={QR_CODE_IMAGE} alt="Payment QR Code" className="qr-code" />
+                      <p className="qr-instruction">Scan this QR code to complete your payment</p>
+                    </div>
+
+                    {/* Payment Screenshot Upload */}
+                    <div className="payment-upload-container">
+                      <h4>Upload Payment Proof</h4>
+                      <div className="upload-area">
+                        <input
+                          type="file"
+                          id="paymentScreenshot"
+                          name="paymentScreenshot"
+                          accept="image/*"
+                          onChange={handlePaymentScreenshotChange}
+                          disabled={uploadingScreenshot}
+                          style={{ display: 'none' }}
+                        />
+                        <label htmlFor="paymentScreenshot" className="upload-label">
+                          {uploadingScreenshot ? (
+                            <>
+                              <Loader size={24} className="animate-spin" />
+                              <span>Uploading...</span>
+                            </>
+                          ) : (
+                            <>
+                              <Upload size={24} />
+                              <span>Click to upload payment screenshot</span>
+                              <p className="upload-hint">PNG, JPG, GIF up to 5MB</p>
+                            </>
+                          )}
+                        </label>
+                      </div>
+
+                      {/* Preview */}
+                      {paymentScreenshotPreview && (
+                        <div className="screenshot-preview">
+                          <p>Payment proof uploaded:</p>
+                          <img src={paymentScreenshotPreview} alt="Payment Screenshot" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+
               {/* Submit Button */}
               <button
                 type="submit"
                 className="btn btn-gold btn-large"
-                disabled={loading || availableEvents.length === 0}
+                disabled={loading || availableEvents.length === 0 || !showPaymentSection}
               >
                 {loading ? (
                   <>

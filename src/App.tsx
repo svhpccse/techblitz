@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Header, Hero, Events, Coordinators, RegistrationForm, Footer } from './components';
-import { Department } from './types';
+import type { Department } from './types';
 import './App.css';
 
 function App() {
