@@ -1,0 +1,249 @@
+/* Coordinators Section Styles */
+
+.coordinators-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
+}
+
+/* Coordinators Grid */
+.coordinators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Coordinator Card */
+.coordinator-card {
+  background: var(--white);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--light-gray);
+  transition: var(--transition);
+  animation: slideUp 0.6s ease-out;
+}
+
+.coordinator-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+  border-color: var(--gold);
+}
+
+/* Coordinator Header */
+.coord-header {
+  background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+  color: var(--white);
+  padding: 1.25rem;
+}
+
+.coord-dept {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* Coordinator Body */
+.coord-body {
+  padding: 1.5rem;
+}
+
+.coordinator-group {
+  margin-bottom: 1.5rem;
+}
+
+.coordinator-group:last-child {
+  margin-bottom: 0;
+}
+
+.coord-role {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--primary-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+/* Coordinator Item */
+.coordinator-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--off-white);
+  border-radius: 0.375rem;
+  transition: var(--transition);
+}
+
+.coordinator-item:hover {
+  background-color: var(--light-gold);
+}
+
+.coordinator-avatar {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coordinator-info {
+  flex: 1;
+}
+
+.coordinator-name {
+  font-weight: 600;
+  color: var(--very-dark);
+  margin: 0 0 0.25rem 0;
+  font-size: var(--font-size-sm);
+}
+
+.coordinator-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-purple);
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.coordinator-contact:hover {
+  color: var(--gold);
+}
+
+/* QR Code Section */
+.qr-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--light-gray);
+  text-align: center;
+}
+
+.qr-section h3 {
+  font-size: var(--font-size-2xl);
+  color: var(--primary-purple);
+  margin-bottom: 0.5rem;
+}
+
+.qr-section > p {
+  color: var(--dark-gray);
+  margin-bottom: 2rem;
+}
+
+.qr-placeholder {
+  background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  color: var(--white);
+  border: 3px dashed rgba(255, 255, 255, 0.2);
+}
+
+.qr-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.qr-placeholder p {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.qr-subtitle {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coordinators-section {
+    padding: 2rem 1rem;
+  }
+
+  .coordinators-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .coord-body {
+    padding: 1rem;
+  }
+
+  .coordinator-item {
+    padding: 0.5rem;
+  }
+
+  .coordinator-avatar {
+    font-size: 1.5rem;
+    width: 40px;
+  }
+
+  .coordinator-name {
+    font-size: var(--font-size-xs);
+  }
+
+  .qr-placeholder {
+    padding: 2rem 1.5rem;
+  }
+
+  .qr-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .qr-placeholder p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .coordinators-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .coordinators-grid {
+    gap: 1rem;
+  }
+
+  .coordinator-card {
+    border-radius: 0.5rem;
+  }
+
+  .coord-header {
+    padding: 1rem;
+  }
+
+  .coordinator-item {
+    margin-bottom: 0.25rem;
+  }
+
+  .qr-section h3 {
+    font-size: var(--font-size-xl);
+  }
+
+  .qr-placeholder {
+    padding: 1.5rem 1rem;
+  }
+
+  .qr-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .qr-placeholder p {
+    font-size: var(--font-size-sm);
+  }
+}

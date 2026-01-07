@@ -1,0 +1,10 @@
+// Components Index
+// Export all components from one location
+
+export { default as Header } from './Header';
+export { default as Hero } from './Hero';
+export { default as Events } from './Events';
+export { default as Coordinators } from './Coordinators';
+export { default as RegistrationForm } from './RegistrationForm';
+export { default as Footer } from './Footer';
+export { default as CountdownTimer } from './CountdownTimer';
