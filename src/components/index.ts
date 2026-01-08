@@ -11,3 +11,4 @@ export { default as CountdownTimer } from './CountdownTimer';
 export { default as Admin } from './Admin';
 export { default as AdminPage } from './AdminPage';
 export { default as AdminAuth } from './AdminAuth';
+export { default as EventRulesModal } from './EventRulesModal';

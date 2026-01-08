@@ -291,6 +291,184 @@ export const EVENT_DETAILS = {
 };
 
 // ============================================
+// EVENT RULES (Department-wise)
+// ============================================
+
+export const EVENT_RULES: Record<string, { title: string; rules: string[]; topics?: string[] }> = {
+  'CAD-MASTER': {
+    title: 'CAD MASTER Rules',
+    rules: [
+      'Teams can have up to 2 members.',
+      'Participants will be given 60 minutes to complete the CAD modeling task.',
+      'A laptop/workstation with CAD software (AutoCAD/SolidWorks) will be provided.',
+      'Participants must follow the design specifications provided.',
+      'Quality of the model and accuracy will be judged.',
+      'Use of reference materials is not allowed.'
+    ]
+  },
+  'QC-KING': {
+    title: 'QC KING Rules',
+    rules: [
+      'Teams can have up to 2 members.',
+      'Event duration: 45 minutes.',
+      'Participants will be given components to inspect for quality.',
+      'Identification of defects and proper documentation is required.',
+      'Accuracy and speed in identifying defects will be judged.',
+      'A checklist will be provided for quality parameters.'
+    ]
+  },
+  'CODE-COMBAT': {
+    title: 'CODE COMBAT Rules',
+    rules: [
+      'Teams can have up to 2 members.',
+      'Programming languages allowed: C, C++, Java, Python.',
+      'Duration: 90 minutes.',
+      'Multiple programming problems will be provided.',
+      'Solutions will be tested against test cases.',
+      'Time and correctness of submission will determine ranking.',
+      'Online judges will be used for code evaluation.'
+    ]
+  },
+  'IDEATHON': {
+    title: 'IDEATHON Rules',
+    rules: [
+      'Teams can have up to 3 members.',
+      'Participants must present an innovative idea with a working prototype or detailed presentation.',
+      'Duration: 10 minutes presentation + 5 minutes Q&A.',
+      'Idea must be feasible and technically sound.',
+      'Plagiarism of any kind is not allowed.',
+      'Judging will be based on innovation, feasibility, and presentation quality.',
+      'Submission deadline: 27.01.2026'
+    ]
+  },
+  'ELECTRO-BUILD': {
+    title: 'ELECTRO BUILD Rules',
+    rules: [
+      'Teams can have up to 2 members.',
+      'Build an electronic circuit based on given specifications.',
+      'Duration: 120 minutes.',
+      'Components will be provided.',
+      'Circuit must be functional and meet all specifications.',
+      'Proper soldering and documentation is required.',
+      'Safety regulations must be followed at all times.'
+    ]
+  },
+  'HACKATHON': {
+    title: 'HACKATHON Rules',
+    rules: [
+      'Teams can have up to 3 members.',
+      'Duration: 4 hours (including project finalization and demo).',
+      'Problem statement will be provided at the event.',
+      'Internet access will be provided.',
+      'Use of pre-built libraries and frameworks is allowed.',
+      'Final submission must include code and documentation.',
+      'Team must demonstrate working functionality.'
+    ]
+  },
+  'STRUCTURAL-ART': {
+    title: 'STRUCTURAL ART Rules',
+    rules: [
+      'Teams can have up to 2 members.',
+      'Design and present a structural solution to a given problem.',
+      'Duration: 120 minutes design + 10 minutes presentation.',
+      'Design software or manual drawings are acceptable.',
+      'Design must follow civil engineering principles.',
+      'Presentation should include analysis and justification.',
+      'Feasibility and innovation will be judged.'
+    ]
+  },
+  'GEOGUESSR': {
+    title: 'GEOGUESSR Rules',
+    rules: [
+      'Participants: Individual or teams of 2.',
+      'Duration: 60 minutes.',
+      'GIS software will be provided.',
+      'Participants must answer geographic and mapping questions.',
+      'Accuracy and speed will determine the ranking.',
+      'Use of reference materials is not allowed.'
+    ]
+  },
+  'BRAIN-BATTLE': {
+    title: 'BRAIN BATTLE Rules',
+    rules: [
+      'Participants: Individual participation.',
+      'Duration: 60 minutes.',
+      'Multiple choice and short answer questions.',
+      'Topics include general technical knowledge and problem-solving.',
+      'Top scorers will advance to the next round.',
+      'Negative marking may apply for incorrect answers.',
+      'Final round will be a rapid-fire Q&A session.'
+    ]
+  },
+  'DIAGNOSTIC-DATA-DECODER': {
+    title: 'Diagnostics Data Decoder (DMLT Event)',
+    rules: [
+      'DMLT students - Individual or team participation.',
+      'Decode lab reports, values, and case data.',
+      'Identify errors, abnormalities, or diagnoses.',
+      'Apply DMLT knowledge to real lab scenarios.',
+      'Time-bound analysis required.',
+      'No mobile phones allowed.',
+      'Judges decision is final.',
+      'Cash Prizes and Certificates will be awarded.'
+    ],
+    topics: [
+      'Lab Report Analysis',
+      'Diagnostic Data Interpretation',
+      'Case Study Analysis',
+      'Clinical Understanding',
+      'Lab Error Identification'
+    ]
+  },
+  'BRAIN-BATTLE-DMLT': {
+    title: 'Brain Battle – Technical Quiz Event (DMLT)',
+    rules: [
+      'Only DMLT students can participate.',
+      'Individual or teams of 2-3 students.',
+      'All years can participate.',
+      'College ID is compulsory.',
+      'No mobile phones or gadgets allowed.',
+      'Stick to time limits strictly.',
+      'No cheating or misbehavior allowed.',
+      'Judges decision is final.',
+      'Cash Prizes and Certificates will be awarded.'
+    ],
+    topics: [
+      'Anatomy & Physiology',
+      'Biochemistry',
+      'Pathology',
+      'Microbiology',
+      'Hematology',
+      'Lab Instruments & Safety'
+    ]
+  },
+  'Paper-Presentation': {
+    title: 'Paper Presentation Rules',
+    rules: [
+      'Teams can have up to 2 members.',
+      'Abstract of 200-300 words must be submitted before deadline (27.01.2026).',
+      'Presentation duration: 5-8 minutes + 2-3 minutes Q&A.',
+      'Presentations can be in English or Tamil.',
+      'Presentation file must be brought on pendrive or email.',
+      'Topics are provided in the list below.',
+      'Judges decision is final and binding.'
+    ]
+  },
+  'RHYTHMICA': {
+    title: 'RHYTHMICA Rules',
+    rules: [
+      'Teams can have 2-6 members.',
+      'Performance duration: 4-6 minutes.',
+      'Music tracks must be submitted in MP3 format before event.',
+      'Performance can be any dance style (classical, contemporary, folk, hip-hop).',
+      'Stage presence and choreography will be judged.',
+      'All team members must be present during performance.',
+      'Use of props is allowed (must be self-arranged).'
+    ]
+  }
+};
+
+// ============================================
 // DEPARTMENT LOGOS (For display icons section)
 // ============================================
 

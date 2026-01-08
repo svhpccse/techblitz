@@ -65,11 +65,7 @@ export const Hero = ({ onRegisterClick }: HeroProps) => {
               <span>Register Now</span>
               <ArrowRight size={20} />
             </button>
-            <button className="btn btn-outline">
-              <a href="https://www.svhpc.in" target="_blank" rel="noopener noreferrer">
-                Visit Website
-              </a>
-            </button>
+           
           </div>
 
           {/* Additional Info */}

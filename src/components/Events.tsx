@@ -93,7 +93,7 @@ export const Events = ({ onEventSelect }: EventsProps) => {
             <div className="event-card">
               <div className="event-card-icon">🎵</div>
               <h4>RHYTHMICA</h4>
-              <p>Cultural and musical performances - Open to all departments</p>
+              <p>Cultural and dance performances - Open to all departments</p>
               <button
                 className="btn btn-primary btn-small"
                 onClick={() => onEventSelect('RHYTHMICA', 'auto_mech')}
