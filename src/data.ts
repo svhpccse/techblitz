@@ -296,25 +296,34 @@ export const EVENT_DETAILS = {
 
 export const EVENT_RULES: Record<string, { title: string; rules: string[]; topics?: string[] }> = {
   'CAD-MASTER': {
-    title: 'CAD MASTER Rules',
+    title: 'CAD MASTER',
     rules: [
-      'Teams can have up to 2 members.',
-      'Participants will be given 60 minutes to complete the CAD modeling task.',
-      'A laptop/workstation with CAD software (AutoCAD/SolidWorks) will be provided.',
-      'Participants must follow the design specifications provided.',
-      'Quality of the model and accuracy will be judged.',
-      'Use of reference materials is not allowed.'
+      'Diploma students from Engineering and Technology streams',
+      'Open to all years (First, Second, and Third Year)',
+      'Participants can take part as individuals',
+      'Basic knowledge of Engineering Drawing and CAD software is preferred',
+      'Event will be conducted individually',
+      'Maximum 2D drawings and basic 3D models using standard CAD software',
+      'Demonstrate proficiency in creating accurate technical drawings',
+      'Creativity, technical accuracy, and practical application of engineering drawing concepts will be evaluated'
     ]
   },
   'QC-KING': {
-    title: 'QC KING Rules',
+    title: 'Quality Control (QC) King - Mech & Auto Event',
     rules: [
-      'Teams can have up to 2 members.',
-      'Event duration: 45 minutes.',
-      'Participants will be given components to inspect for quality.',
-      'Identification of defects and proper documentation is required.',
-      'Accuracy and speed in identifying defects will be judged.',
-      'A checklist will be provided for quality parameters.'
+      'Mechanical and Automobile Students only',
+      'Participation can be individual only',
+      'To measure the product dimensions for mechanical components',
+      'Based on Metrology Related QC',
+      'Use of mobile phones, smart watches, or electronic gadgets is strictly prohibited',
+      'Extra time will not be provided',
+      'Clarity in technical explanation is required',
+      'Participants should report 30 minutes before the event starts',
+      'Event coordinators reserve the right to modify rules if necessary',
+      'Participants must maintain discipline and professionalism throughout the event',
+      'Time will be allotted on the spot',
+      'Coordinator decision is final',
+      'Cash Prize and Participation certificates will be provided to all registered participants'
     ]
   },
   'CODE-COMBAT': {
@@ -342,15 +351,18 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
     ]
   },
   'ELECTRO-BUILD': {
-    title: 'ELECTRO BUILD Rules',
+    title: 'Electro Build (DEEE Event)',
     rules: [
-      'Teams can have up to 2 members.',
-      'Build an electronic circuit based on given specifications.',
-      'Duration: 120 minutes.',
-      'Components will be provided.',
-      'Circuit must be functional and meet all specifications.',
-      'Proper soldering and documentation is required.',
-      'Safety regulations must be followed at all times.'
+      'DEEE students can participate',
+      'Team participation: 2 members',
+      'Design a circuit based on given problem statement',
+      'Make a connection based on your circuit',
+      'Verify the circuit',
+      'No mobile phones allowed',
+      'Should be finished within given time',
+      'Tests practical skills and designing capabilities',
+      'Judges\' decision is final',
+      'Cash Prizes and Certificates will be awarded'
     ]
   },
   'HACKATHON': {
@@ -366,26 +378,39 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
     ]
   },
   'STRUCTURAL-ART': {
-    title: 'STRUCTURAL ART Rules',
+    title: 'Structural Art',
     rules: [
-      'Teams can have up to 2 members.',
-      'Design and present a structural solution to a given problem.',
-      'Duration: 120 minutes design + 10 minutes presentation.',
-      'Design software or manual drawings are acceptable.',
-      'Design must follow civil engineering principles.',
-      'Presentation should include analysis and justification.',
-      'Feasibility and innovation will be judged.'
+      'Open to civil engineering students',
+      'Individual participation only',
+      'Design and showcase civil engineering skills using SketchUp/Revit',
+      'Create a 3D model of a given structure or site',
+      'Problem statement will be provided on the spot',
+      'Time limit: 1-2 hours',
+      'Tests modeling skills, creativity, and attention to detail',
+      'No external help or mobile phones allowed during the event',
+      'Models will be evaluated based on accuracy, creativity, and presentation',
+      'Judges\' decision is final',
+      'Cash Prizes and Certificates will be awarded',
+      'Opportunity to showcase your work'
     ]
   },
   'GEOGUESSR': {
-    title: 'GEOGUESSR Rules',
+    title: 'GeoGuesser',
     rules: [
-      'Participants: Individual or teams of 2.',
-      'Duration: 60 minutes.',
-      'GIS software will be provided.',
-      'Participants must answer geographic and mapping questions.',
-      'Accuracy and speed will determine the ranking.',
-      'Use of reference materials is not allowed.'
+      'Open to civil engineering students',
+      'Individual participation only',
+      'Test your knowledge of geography and civil engineering landmarks',
+      'Identify locations and structures from around the world',
+      'Images of civil engineering structures, landmarks, or locations will be shown',
+      'Identify the location, structure, or landmark within the given time limit',
+      'Points will be awarded based on accuracy and speed',
+      'No external help or mobile phones allowed during the event',
+      'Judges\' decision is final',
+      'Round 1: Identify 10 structures/landmarks (easy level)',
+      'Round 2: Identify 5 structures/landmarks (medium level)',
+      'Round 3: Identify 3 structures/landmarks (hard level)',
+      'Cash Prizes and Certificates will be awarded',
+      'Bragging rights to the winners'
     ]
   },
   'BRAIN-BATTLE': {
@@ -443,15 +468,25 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
     ]
   },
   'Paper-Presentation': {
-    title: 'Paper Presentation Rules',
+    title: 'Paper Presentation – Rules & Regulations',
     rules: [
-      'Teams can have up to 2 members.',
-      'Abstract of 200-300 words must be submitted before deadline (27.01.2026).',
-      'Presentation duration: 5-8 minutes + 2-3 minutes Q&A.',
-      'Presentations can be in English or Tamil.',
-      'Presentation file must be brought on pendrive or email.',
-      'Topics are provided in the list below.',
-      'Judges decision is final and binding.'
+      '✓ TEAM COMPOSITION: Each team must consist of exactly TWO members. Single-member or more-than-two-member teams will be rejected.',
+      '✓ TOPIC SELECTION: Paper must strictly fall under the topics given by the department. Papers outside prescribed topics will be disqualified.',
+      '✓ PAPER SUBMISSION: Deadline 22/01/2026 (Wednesday), 11:59 PM. Late submissions will NOT be considered. PDF format only.',
+      '✓ FILE FORMAT: PaperPresentation_TeamLeaderName_CollegeName.pdf',
+      '✓ PAPER FORMAT: Maximum 6 pages, minimum 4 pages (excluding references). Font: Times New Roman. Title – 14 (Bold), Headings – 12 (Bold), Content – 12. Line spacing: 1.5',
+      '✓ PAPER CONTENT: Proper abstract, keywords, introduction, methodology, results, conclusion, and references are mandatory.',
+      '✓ PLAGIARISM: Plagiarism above 20% will lead to immediate rejection.',
+      '✓ SELECTION PROCESS: Papers evaluated on Relevance to topic, Technical content, Clarity and originality, Presentation structure.',
+      '✓ INTIMATION DATE: Selected teams will be notified on 27/01/2026 (Monday) via email/WhatsApp.',
+      '✓ PRESENTATION TIME: 8 minutes for presentation + 2 minutes for Q&A. Teams exceeding time limits will be stopped abruptly.',
+      '✓ PRESENTATION MATERIAL: PPT/PPTX format only. Maximum 12 slides (excluding title and thank-you slide). Bring PPT in both pen drive and email backup.',
+      '✓ PARTICIPATION REQUIREMENTS: Carry College ID card and Symposium registration confirmation. Both team members must be present.',
+      '✓ ORIGINALITY & DISCIPLINE: Copied or AI-generated papers will be caught during Q&A. Any misconduct will lead to disqualification.',
+      '✓ NO MOBILE PHONES: Use of mobile phones during presentation is strictly prohibited.',
+      '✓ CERTIFICATES & AWARDS: Certificates provided only to participants who present. Winners decided on Paper quality, Presentation skill, and Q&A ability.',
+      '✓ GENERAL INSTRUCTIONS: Reporting time will be informed with selection results. Participants must strictly follow the schedule.',
+      '✓ COMMITTEE RESERVES RIGHT: The organizing committee reserves the right to modify rules if necessary.'
     ]
   },
   'RHYTHMICA': {
@@ -464,6 +499,22 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Stage presence and choreography will be judged.',
       'All team members must be present during performance.',
       'Use of props is allowed (must be self-arranged).'
+    ]
+  },
+  'Paper-Presentation-Civil': {
+    title: 'Paper Presentation – Civil Engineering',
+    rules: [
+      '📚 TOPICS: Biophilic Design (Integrating nature in design), Self-Healing Roads (Innovative road technology), Climate-Resilient Construction (Sustainable building practices)',
+      '✓ ELIGIBILITY: Open to civil engineering students (individual or team of 2)',
+      '✓ ABSTRACT SUBMISSION: Max 250 words by 27.01.2026',
+      '✓ FULL PAPER SUBMISSION: By 28.01.2026',
+      '✓ PRESENTATION TIME: 10-15 minutes including Q&A',
+      '✓ PRESENTATION FORMAT: PowerPoint only',
+      '✓ ORIGINALITY: Original work only; plagiarism will lead to disqualification',
+      '✓ EVALUATION CRITERIA: Content (40%) - originality, relevance, technical depth. Presentation (30%) - clarity, organization, communication. Q&A (30%) - understanding, response',
+      '✓ OUTCOME: Cash Prizes and Certificates',
+      '✓ IMPORTANT DATES: Abstract submission: 27.01.2026, Full paper submission: 28.01.2026, Presentation: 30.01.2026',
+      '✓ JUDGES DECISION: Final and binding'
     ]
   }
 };
