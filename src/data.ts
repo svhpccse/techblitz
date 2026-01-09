@@ -295,7 +295,7 @@ export const EVENT_DETAILS = {
 // ============================================
 
 export const EVENT_RULES: Record<string, { title: string; rules: string[]; topics?: string[] }> = {
-  'CAD-MASTER': {
+  'CAD MASTER': {
     title: 'CAD MASTER',
     rules: [
       'Diploma students from Engineering and Technology streams',
@@ -308,7 +308,7 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Creativity, technical accuracy, and practical application of engineering drawing concepts will be evaluated'
     ]
   },
-  'QC-KING': {
+  'QC KING': {
     title: 'Quality Control (QC) King - Mech & Auto Event',
     rules: [
       'Mechanical and Automobile Students only',
@@ -326,7 +326,7 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Cash Prize and Participation certificates will be provided to all registered participants'
     ]
   },
-  'CODE-COMBAT': {
+  'CODE COMBAT': {
     title: 'CODE COMBAT Rules',
     rules: [
       'Teams can have up to 2 members.',
@@ -350,7 +350,7 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Submission deadline: 27.01.2026'
     ]
   },
-  'ELECTRO-BUILD': {
+  'ELECTRO BUILD': {
     title: 'Electro Build (DEEE Event)',
     rules: [
       'DEEE students can participate',
@@ -377,7 +377,7 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Team must demonstrate working functionality.'
     ]
   },
-  'STRUCTURAL-ART': {
+  'STRUCTURAL ART': {
     title: 'Structural Art',
     rules: [
       'Open to civil engineering students',
@@ -413,7 +413,7 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Bragging rights to the winners'
     ]
   },
-  'BRAIN-BATTLE': {
+  'BRAIN BATTLE': {
     title: 'BRAIN BATTLE Rules',
     rules: [
       'Participants: Individual participation.',
@@ -425,7 +425,7 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Final round will be a rapid-fire Q&A session.'
     ]
   },
-  'DIAGNOSTIC-DATA-DECODER': {
+  'DIAGNOSTIC DATA DECODER': {
     title: 'Diagnostics Data Decoder (DMLT Event)',
     rules: [
       'DMLT students - Individual or team participation.',
@@ -445,50 +445,6 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Lab Error Identification'
     ]
   },
-  'BRAIN-BATTLE-DMLT': {
-    title: 'Brain Battle – Technical Quiz Event (DMLT)',
-    rules: [
-      'Only DMLT students can participate.',
-      'Individual or teams of 2-3 students.',
-      'All years can participate.',
-      'College ID is compulsory.',
-      'No mobile phones or gadgets allowed.',
-      'Stick to time limits strictly.',
-      'No cheating or misbehavior allowed.',
-      'Judges decision is final.',
-      'Cash Prizes and Certificates will be awarded.'
-    ],
-    topics: [
-      'Anatomy & Physiology',
-      'Biochemistry',
-      'Pathology',
-      'Microbiology',
-      'Hematology',
-      'Lab Instruments & Safety'
-    ]
-  },
-  'Paper-Presentation': {
-    title: 'Paper Presentation – Rules & Regulations',
-    rules: [
-      '✓ TEAM COMPOSITION: Each team must consist of exactly TWO members. Single-member or more-than-two-member teams will be rejected.',
-      '✓ TOPIC SELECTION: Paper must strictly fall under the topics given by the department. Papers outside prescribed topics will be disqualified.',
-      '✓ PAPER SUBMISSION: Deadline 22/01/2026 (Wednesday), 11:59 PM. Late submissions will NOT be considered. PDF format only.',
-      '✓ FILE FORMAT: PaperPresentation_TeamLeaderName_CollegeName.pdf',
-      '✓ PAPER FORMAT: Maximum 6 pages, minimum 4 pages (excluding references). Font: Times New Roman. Title – 14 (Bold), Headings – 12 (Bold), Content – 12. Line spacing: 1.5',
-      '✓ PAPER CONTENT: Proper abstract, keywords, introduction, methodology, results, conclusion, and references are mandatory.',
-      '✓ PLAGIARISM: Plagiarism above 20% will lead to immediate rejection.',
-      '✓ SELECTION PROCESS: Papers evaluated on Relevance to topic, Technical content, Clarity and originality, Presentation structure.',
-      '✓ INTIMATION DATE: Selected teams will be notified on 27/01/2026 (Monday) via email/WhatsApp.',
-      '✓ PRESENTATION TIME: 8 minutes for presentation + 2 minutes for Q&A. Teams exceeding time limits will be stopped abruptly.',
-      '✓ PRESENTATION MATERIAL: PPT/PPTX format only. Maximum 12 slides (excluding title and thank-you slide). Bring PPT in both pen drive and email backup.',
-      '✓ PARTICIPATION REQUIREMENTS: Carry College ID card and Symposium registration confirmation. Both team members must be present.',
-      '✓ ORIGINALITY & DISCIPLINE: Copied or AI-generated papers will be caught during Q&A. Any misconduct will lead to disqualification.',
-      '✓ NO MOBILE PHONES: Use of mobile phones during presentation is strictly prohibited.',
-      '✓ CERTIFICATES & AWARDS: Certificates provided only to participants who present. Winners decided on Paper quality, Presentation skill, and Q&A ability.',
-      '✓ GENERAL INSTRUCTIONS: Reporting time will be informed with selection results. Participants must strictly follow the schedule.',
-      '✓ COMMITTEE RESERVES RIGHT: The organizing committee reserves the right to modify rules if necessary.'
-    ]
-  },
   'RHYTHMICA': {
     title: 'RHYTHMICA Rules',
     rules: [
@@ -501,11 +457,91 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       'Use of props is allowed (must be self-arranged).'
     ]
   },
-  'Paper-Presentation-Civil': {
-    title: 'Paper Presentation – Civil Engineering',
+  'Paper Presentation: Biophilic Design': {
+    title: 'Paper Presentation – Civil Engineering: Biophilic Design',
     rules: [
-      '📚 TOPICS: Biophilic Design (Integrating nature in design), Self-Healing Roads (Innovative road technology), Climate-Resilient Construction (Sustainable building practices)',
+      '📚 TOPIC: Biophilic Design - Integrating nature in design',
       '✓ ELIGIBILITY: Open to civil engineering students (individual or team of 2)',
+      '✓ ABSTRACT SUBMISSION: Max 250 words by 27.01.2026',
+      '✓ FULL PAPER SUBMISSION: By 28.01.2026',
+      '✓ PRESENTATION TIME: 10-15 minutes including Q&A',
+      '✓ PRESENTATION FORMAT: PowerPoint only',
+      '✓ ORIGINALITY: Original work only; plagiarism will lead to disqualification',
+      '✓ EVALUATION CRITERIA: Content (40%) - originality, relevance, technical depth. Presentation (30%) - clarity, organization, communication. Q&A (30%) - understanding, response',
+      '✓ OUTCOME: Cash Prizes and Certificates',
+      '✓ IMPORTANT DATES: Abstract submission: 27.01.2026, Full paper submission: 28.01.2026, Presentation: 30.01.2026',
+      '✓ JUDGES DECISION: Final and binding'
+    ]
+  },
+  'Paper Presentation: Self-Healing Roads': {
+    title: 'Paper Presentation – Civil Engineering: Self-Healing Roads',
+    rules: [
+      '📚 TOPIC: Self-Healing Roads - Innovative road technology',
+      '✓ ELIGIBILITY: Open to civil engineering students (individual or team of 2)',
+      '✓ ABSTRACT SUBMISSION: Max 250 words by 27.01.2026',
+      '✓ FULL PAPER SUBMISSION: By 28.01.2026',
+      '✓ PRESENTATION TIME: 10-15 minutes including Q&A',
+      '✓ PRESENTATION FORMAT: PowerPoint only',
+      '✓ ORIGINALITY: Original work only; plagiarism will lead to disqualification',
+      '✓ EVALUATION CRITERIA: Content (40%) - originality, relevance, technical depth. Presentation (30%) - clarity, organization, communication. Q&A (30%) - understanding, response',
+      '✓ OUTCOME: Cash Prizes and Certificates',
+      '✓ IMPORTANT DATES: Abstract submission: 27.01.2026, Full paper submission: 28.01.2026, Presentation: 30.01.2026',
+      '✓ JUDGES DECISION: Final and binding'
+    ]
+  },
+  'Paper Presentation: Climate - Resilient Construction': {
+    title: 'Paper Presentation – Civil Engineering: Climate-Resilient Construction',
+    rules: [
+      '📚 TOPIC: Climate-Resilient Construction - Sustainable building practices',
+      '✓ ELIGIBILITY: Open to civil engineering students (individual or team of 2)',
+      '✓ ABSTRACT SUBMISSION: Max 250 words by 27.01.2026',
+      '✓ FULL PAPER SUBMISSION: By 28.01.2026',
+      '✓ PRESENTATION TIME: 10-15 minutes including Q&A',
+      '✓ PRESENTATION FORMAT: PowerPoint only',
+      '✓ ORIGINALITY: Original work only; plagiarism will lead to disqualification',
+      '✓ EVALUATION CRITERIA: Content (40%) - originality, relevance, technical depth. Presentation (30%) - clarity, organization, communication. Q&A (30%) - understanding, response',
+      '✓ OUTCOME: Cash Prizes and Certificates',
+      '✓ IMPORTANT DATES: Abstract submission: 27.01.2026, Full paper submission: 28.01.2026, Presentation: 30.01.2026',
+      '✓ JUDGES DECISION: Final and binding'
+    ]
+  },
+  'Paper Presentation: Sustainability and Future Mobility Automation': {
+    title: 'Paper Presentation – Auto/Mech Engineering: Sustainability and Future Mobility Automation',
+    rules: [
+      '📚 TOPIC: Sustainability and Future Mobility Automation',
+      '✓ ELIGIBILITY: Open to Auto/Mech engineering students (individual or team of 2)',
+      '✓ ABSTRACT SUBMISSION: Max 250 words by 27.01.2026',
+      '✓ FULL PAPER SUBMISSION: By 28.01.2026',
+      '✓ PRESENTATION TIME: 10-15 minutes including Q&A',
+      '✓ PRESENTATION FORMAT: PowerPoint only',
+      '✓ ORIGINALITY: Original work only; plagiarism will lead to disqualification',
+      '✓ EVALUATION CRITERIA: Content (40%) - originality, relevance, technical depth. Presentation (30%) - clarity, organization, communication. Q&A (30%) - understanding, response',
+      '✓ OUTCOME: Cash Prizes and Certificates',
+      '✓ IMPORTANT DATES: Abstract submission: 27.01.2026, Full paper submission: 28.01.2026, Presentation: 30.01.2026',
+      '✓ JUDGES DECISION: Final and binding'
+    ]
+  },
+  'Paper Presentation: AI & Industry 4.0': {
+    title: 'Paper Presentation – Auto/Mech Engineering: AI & Industry 4.0',
+    rules: [
+      '📚 TOPIC: AI & Industry 4.0',
+      '✓ ELIGIBILITY: Open to Auto/Mech engineering students (individual or team of 2)',
+      '✓ ABSTRACT SUBMISSION: Max 250 words by 27.01.2026',
+      '✓ FULL PAPER SUBMISSION: By 28.01.2026',
+      '✓ PRESENTATION TIME: 10-15 minutes including Q&A',
+      '✓ PRESENTATION FORMAT: PowerPoint only',
+      '✓ ORIGINALITY: Original work only; plagiarism will lead to disqualification',
+      '✓ EVALUATION CRITERIA: Content (40%) - originality, relevance, technical depth. Presentation (30%) - clarity, organization, communication. Q&A (30%) - understanding, response',
+      '✓ OUTCOME: Cash Prizes and Certificates',
+      '✓ IMPORTANT DATES: Abstract submission: 27.01.2026, Full paper submission: 28.01.2026, Presentation: 30.01.2026',
+      '✓ JUDGES DECISION: Final and binding'
+    ]
+  },
+  'Paper Presentation: Additive Manufacturing': {
+    title: 'Paper Presentation – Auto/Mech Engineering: Additive Manufacturing',
+    rules: [
+      '📚 TOPIC: Additive Manufacturing',
+      '✓ ELIGIBILITY: Open to Auto/Mech engineering students (individual or team of 2)',
       '✓ ABSTRACT SUBMISSION: Max 250 words by 27.01.2026',
       '✓ FULL PAPER SUBMISSION: By 28.01.2026',
       '✓ PRESENTATION TIME: 10-15 minutes including Q&A',
