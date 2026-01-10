@@ -366,15 +366,20 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
     ]
   },
   'HACKATHON': {
-    title: 'HACKATHON Rules',
+    title: 'HACKATHON (ECE & EEE Event)',
     rules: [
-      'Teams can have up to 3 members.',
-      'Duration: 4 hours (including project finalization and demo).',
-      'Problem statement will be provided at the event.',
-      'Internet access will be provided.',
-      'Use of pre-built libraries and frameworks is allowed.',
-      'Final submission must include code and documentation.',
-      'Team must demonstrate working functionality.'
+      'Eligibility: Participants must carry their college ID card.',
+      'Problem Statement: Teams must select a problem statement provided by the organizers.',
+      'Solutions must be original and developed during the hackathon period only.',
+      'Team Size: Participation can be individual or team-based.',
+      'A team may consist of 2–4 members.',
+      'Registration: Participants must register before the event.',
+      'On-spot registrations also allowed.',
+      'Event Rounds: Participants are required to use only KiCad software for the hackathon.',
+      'Time Limit: The hackathon will be conducted for a fixed duration of 1 hour only.',
+      'Late submissions will not be accepted.',
+      'Use of Devices: Use of mobile phones or internet is not allowed unless permitted.',
+      'Participants will use the provided systems. If possible, they are encouraged to bring their own laptops with the required software installed.'
     ]
   },
   'STRUCTURAL ART': {
@@ -551,6 +556,51 @@ export const EVENT_RULES: Record<string, { title: string; rules: string[]; topic
       '✓ OUTCOME: Cash Prizes and Certificates',
       '✓ IMPORTANT DATES: Abstract submission: 27.01.2026, Full paper submission: 28.01.2026, Presentation: 30.01.2026',
       '✓ JUDGES DECISION: Final and binding'
+    ]
+  },
+  'Paper Presentation: Green Power System': {
+    title: 'Paper Presentation – EEE/ECE Engineering: Green Power System',
+    rules: [
+      'Each team may consist of a maximum of 2 participants.',
+      'Participants must submit an abstract before the specified deadline.',
+      'DEADLINE DATE: 27.01.2026 (TUESDAY)',
+      'The abstract should not exceed 250 words.',
+      'Paper presentations must be prepared using PowerPoint (PPT).',
+      'Each team will be allotted 4-5 minutes for presentation, followed by 1-2 minutes for questions.',
+      'Bring presentation on USB drive + backup (email/cloud)',
+      'The presentation should be in English.',
+      'Plagiarism is strictly prohibited; papers found plagiarized will be disqualified.',
+      'Participants must carry their college ID card on the day of the event.'
+    ]
+  },
+  'Paper Presentation: IoT and Smart Cities': {
+    title: 'Paper Presentation – EEE/ECE Engineering: IoT and Smart Cities',
+    rules: [
+      'Each team may consist of a maximum of 2 participants.',
+      'Participants must submit an abstract before the specified deadline.',
+      'DEADLINE DATE: 27.01.2026 (TUESDAY)',
+      'The abstract should not exceed 250 words.',
+      'Paper presentations must be prepared using PowerPoint (PPT).',
+      'Each team will be allotted 4-5 minutes for presentation, followed by 1-2 minutes for questions.',
+      'Bring presentation on USB drive + backup (email/cloud)',
+      'The presentation should be in English.',
+      'Plagiarism is strictly prohibited; papers found plagiarized will be disqualified.',
+      'Participants must carry their college ID card on the day of the event.'
+    ]
+  },
+  'Paper Presentation: AI in Power Station': {
+    title: 'Paper Presentation – EEE/ECE Engineering: AI in Power Station',
+    rules: [
+      'Each team may consist of a maximum of 2 participants.',
+      'Participants must submit an abstract before the specified deadline.',
+      'DEADLINE DATE: 27.01.2026 (TUESDAY)',
+      'The abstract should not exceed 250 words.',
+      'Paper presentations must be prepared using PowerPoint (PPT).',
+      'Each team will be allotted 4-5 minutes for presentation, followed by 1-2 minutes for questions.',
+      'Bring presentation on USB drive + backup (email/cloud)',
+      'The presentation should be in English.',
+      'Plagiarism is strictly prohibited; papers found plagiarized will be disqualified.',
+      'Participants must carry their college ID card on the day of the event.'
     ]
   }
 };
