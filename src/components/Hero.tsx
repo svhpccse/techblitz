@@ -73,28 +73,23 @@ export const Hero = ({ onRegisterClick }: HeroProps) => {
         <div className="hero-content">
           {/* College Info */}
           <div className="hero-college">
-            {/* Header Logos */}
+            {/* Header Logo */}
             <div className="hero-header-logos">
               <img
                 src="/logos/co-c.png"
                 alt="coc Logo"
                 className="header-logo"
               />
-            </div>
-
-            <div className="hero-header-logos">
               <img
                 src="/logos/logo.png"
                 alt="SVHPC Logo"
                 className="header-logo"
               />
-            </div>
-            <div className="hero-header-logos">
               <img
                 src="/logos/sow.png"
                 alt="Sow Logo"
                 className="header-logo"
-              />{" "}
+              />
             </div>
             <p className="college-name">
               {eventDetails?.college ||
