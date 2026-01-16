@@ -1,0 +1,391 @@
+/* Coordinators.css - Ultra Modern Professional Theme */
+
+/* ===== COORDINATORS SECTION ===== */
+.coordinators-section {
+  position: relative;
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, #000000, #0a0a0a);
+  color: #FFFFFF;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.coordinators-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFD700 50%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #AAAAAA;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* ===== COORDINATORS GRID ===== */
+.coordinators-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===== COORDINATOR CARD ===== */
+.coordinator-card {
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.02), rgba(255, 215, 0, 0.01));
+  border: 1px solid rgba(255, 215, 0, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coordinator-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+
+.coordinator-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 215, 0, 0.3);
+  box-shadow: 
+    0 20px 40px rgba(255, 215, 0, 0.05),
+    0 0 0 1px rgba(255, 215, 0, 0.1);
+}
+
+.coord-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  position: relative;
+}
+
+.coord-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD700, transparent);
+}
+
+.coord-dept {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.coord-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ===== COORDINATOR GROUPS ===== */
+.coordinator-group {
+  position: relative;
+}
+
+.coord-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.coord-role::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 16px;
+  background: #FFD700;
+  border-radius: 2px;
+}
+
+/* ===== COORDINATOR ITEMS ===== */
+.coordinator-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 215, 0, 0.03);
+  border: 1px solid rgba(255, 215, 0, 0.05);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.coordinator-item:hover {
+  background: rgba(255, 215, 0, 0.05);
+  border-color: rgba(255, 215, 0, 0.2);
+  transform: translateX(4px);
+}
+
+.coordinator-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, #FFD700, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.coordinator-item:hover::before {
+  opacity: 1;
+}
+
+.coordinator-avatar {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700;
+}
+
+.coordinator-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.coordinator-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.3px;
+}
+
+.coordinator-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #AAAAAA;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.coordinator-contact:hover {
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.coordinator-contact svg {
+  flex-shrink: 0;
+}
+
+/* ===== GRID BACKGROUND ELEMENTS ===== */
+.coordinators-grid::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 215, 0, 0.05);
+  animation: float 20s ease-in-out infinite;
+}
+
+.coordinators-grid::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+  border: 1px solid rgba(255, 215, 0, 0.03);
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .coordinators-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .coordinators-section {
+    padding: 6rem 0;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .coordinators-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    padding: 0 1.5rem;
+  }
+  
+  .coordinator-card {
+    padding: 2rem;
+  }
+  
+  .coord-dept {
+    font-size: 1.3rem;
+  }
+  
+  .coordinator-item {
+    padding: 1rem;
+  }
+  
+  .coordinator-avatar {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coordinators-section {
+    padding: 4rem 0;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .coordinator-card {
+    padding: 1.5rem;
+  }
+  
+  .coord-body {
+    gap: 2rem;
+  }
+  
+  .coordinator-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .coordinator-info {
+    width: 100%;
+  }
+  
+  .coordinator-contact {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .coordinator-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .coordinator-avatar svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ===== LOADING ANIMATION FOR CARDS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coordinator-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.coordinator-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.coordinator-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.coordinator-card:nth-child(4) {
+  animation-delay: 0.3s;
+}

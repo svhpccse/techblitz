@@ -1,0 +1,409 @@
+/* Admin Rules Editor Styles */
+.rules-editor-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rules-editor-header {
+  margin-bottom: 30px;
+}
+
+.rules-editor-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  color: #333;
+}
+
+.rules-editor-header p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffebee;
+  border-left: 4px solid #f44336;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  color: #c62828;
+  font-size: 14px;
+}
+
+.error-banner button {
+  background: none;
+  border: none;
+  color: #c62828;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.rules-search {
+  margin-bottom: 20px;
+}
+
+.rules-search input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+}
+
+.rules-search input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+/* Form */
+.rule-editor-form {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.rule-editor-form h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input[type="text"]:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  color: #999;
+}
+
+.rules-list-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rule-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.rule-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 40px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.rule-input-row textarea {
+  flex: 1;
+  min-height: 60px;
+  resize: vertical;
+}
+
+.btn-remove-rule {
+  padding: 8px;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 6px;
+  color: #f44336;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-remove-rule:hover {
+  background: #ffcdd2;
+  color: #d32f2f;
+}
+
+.btn-add-rule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #e3f2fd;
+  border: 1px dashed #2196f3;
+  border-radius: 6px;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-add-rule:hover {
+  background: #bbdefb;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-save,
+.btn-cancel {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-save {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-save:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.btn-cancel:hover {
+  background: #e0e0e0;
+}
+
+/* Rules List */
+.rules-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+}
+
+.rule-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.rule-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.rule-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rule-card-header h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.rule-title {
+  margin: 0;
+  font-size: 13px;
+  color: #999;
+}
+
+.rule-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.btn-edit:hover {
+  background: #bbdefb;
+  color: #0d47a1;
+}
+
+.btn-delete {
+  background: #ffebee;
+  color: #f44336;
+}
+
+.btn-delete:hover {
+  background: #ffcdd2;
+  color: #d32f2f;
+}
+
+.rule-card-body {
+  padding-top: 12px;
+}
+
+.rules-preview {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.rules-preview li {
+  margin-bottom: 6px;
+}
+
+.more-rules {
+  color: #999;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 2px dashed #ddd;
+}
+
+.empty-state p {
+  margin: 8px 0;
+  color: #999;
+}
+
+.text-muted {
+  font-size: 13px;
+  color: #bbb;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading svg {
+  color: #667eea;
+  margin-bottom: 16px;
+}
+
+.loading p {
+  color: #666;
+  margin: 0;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rules-list {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-save,
+  .btn-cancel {
+    width: 100%;
+  }
+
+  .rule-input-row {
+    flex-direction: column;
+  }
+
+  .rule-number {
+    width: 100%;
+  }
+}

@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow anyone to read registrations (for admin panel)
+    // Allow authenticated users to write their own registrations
+    // Allow anyone to read and write from all registration collections
+    
+    // Department Registration Collections
+    match /registrations_auto_mech/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    match /registrations_cse_aiml/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    match /registrations_eee_ece/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    match /registrations_civil/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    match /registrations_mlt/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Non-Technical Collections
+    match /registrations_non_technical/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    // Catch-all rule to deny by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

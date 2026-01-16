@@ -1,0 +1,629 @@
+/* ===== EVENTS SECTION ===== */
+.evt-section {
+  position: relative;
+  padding: 8rem 0;
+  /* Deep black to dark charcoal gradient */
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+  color: #ffffff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.evt-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== SECTION HEADER ===== */
+.evt-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.evt-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+
+.evt-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  /* Gold-to-Silver Metallic Text Effect */
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.evt-subtitle {
+  font-size: 1.1rem;
+  color: #888888; /* Dimmed text for better hierarchy */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== DEPARTMENTS GRID ===== */
+.evt-departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== DEPARTMENT CARD ===== */
+.evt-dept-card {
+  /* Using dark glassmorphism instead of white/light backgrounds */
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.evt-dept-card:hover {
+  border-color: rgba(255, 215, 0, 0.4);
+  background: rgba(25, 25, 25, 0.8);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 215, 0, 0.1);
+}
+
+.evt-dept-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.evt-dept-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.evt-dept-icon {
+  font-size: 1.8rem;
+}
+
+/* ===== LIST ITEMS (Technical & Papers) ===== */
+.evt-category-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666666;
+  margin: 1.8rem 0 1rem 0;
+  font-weight: 700;
+}
+
+.evt-event-btn,
+.evt-paper-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Dark button backgrounds */
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 0.8rem;
+  border-radius: 14px;
+  color: #dddddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.evt-event-btn:hover,
+.evt-paper-btn:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.4);
+  color: #ffd700;
+  transform: translateX(6px);
+}
+
+.evt-event-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.evt-paper-icon {
+  margin-right: 0.5rem;
+}
+
+.evt-paper-topic {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* ===== NON-TECHNICAL SECTION ===== */
+.evt-nontech-section {
+  margin-top: 6rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(
+    145deg,
+    rgba(10, 10, 10, 0.8),
+    rgba(0, 0, 0, 0.9)
+  );
+  border-radius: 40px;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.evt-nontech-title {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.evt-nontech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Individual small cards for non-tech */
+.evt-card {
+  background: rgba(255, 215, 0, 0.02);
+  padding: 2.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  transition: 0.4s ease;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.evt-card:hover {
+  border-color: #ffd700;
+  background: rgba(255, 215, 0, 0.05);
+  transform: scale(1.02);
+}
+
+.evt-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.evt-card p {
+  font-size: 0.95rem;
+  color: #999;
+  margin-bottom: 2rem;
+}
+
+.evt-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== ULTRA MODERN BUTTON ===== */
+.evt-btn {
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.evt-btn-primary {
+  background: #ffd700;
+  color: #000000;
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.evt-btn-primary:hover {
+  background: #fff500; /* Bright gold instead of white */
+  color: #000000;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.evt-btn-small {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.evt-loading-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.evt-error-message {
+  background: rgba(255, 50, 50, 0.1);
+  border: 1px solid rgba(255, 50, 50, 0.3);
+  color: #ff6b6b;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ===== ANIMATIONS ===== */
+.evt-dept-card,
+.evt-card {
+  animation: evtFadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes evtFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.evt-events-list,
+.evt-category,
+.evt-papers-list {
+  width: 100%;
+}
+
+/* ===== MOBILE RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .evt-section {
+    padding: 6rem 0;
+  }
+
+  .evt-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .evt-title {
+    font-size: 2.8rem;
+  }
+
+  .evt-subtitle {
+    font-size: 1rem;
+  }
+
+  .evt-departments-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .evt-dept-card {
+    padding: 2rem;
+  }
+
+  .evt-nontech-section {
+    margin-top: 4rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .evt-nontech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .evt-section {
+    padding: 4rem 0;
+  }
+
+  .evt-wrapper {
+    padding: 0 1rem;
+  }
+
+  .evt-header {
+    margin-bottom: 3rem;
+  }
+
+  .evt-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .evt-subtitle {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .evt-departments-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .evt-dept-card {
+    padding: 1.5rem;
+  }
+
+  .evt-dept-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .evt-dept-name {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+  }
+
+  .evt-category-label {
+    font-size: 0.75rem;
+    margin: 1.2rem 0 0.8rem 0;
+  }
+
+  .evt-event-btn,
+  .evt-paper-btn {
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.6rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  .evt-nontech-section {
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    border-radius: 24px;
+  }
+
+  .evt-nontech-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .evt-nontech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .evt-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .evt-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .evt-card p {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .evt-card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .evt-btn-primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .evt-section {
+    padding: 2.5rem 0;
+  }
+
+  .evt-wrapper {
+    padding: 0 0.75rem;
+  }
+
+  .evt-header {
+    margin-bottom: 2rem;
+  }
+
+  .evt-header::after {
+    bottom: -1rem;
+    width: 60px;
+    height: 2px;
+  }
+
+  .evt-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .evt-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .evt-departments-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .evt-dept-card {
+    padding: 1.2rem;
+    border-radius: 16px;
+    border-width: 1px;
+  }
+
+  .evt-dept-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    gap: 8px;
+  }
+
+  .evt-dept-name {
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+  }
+
+  .evt-dept-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .evt-category-label {
+    font-size: 0.7rem;
+    margin: 1rem 0 0.6rem 0;
+    letter-spacing: 1px;
+  }
+
+  .evt-event-btn,
+  .evt-paper-btn {
+    padding: 0.8rem 0.9rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+
+  .evt-event-name,
+  .evt-paper-topic {
+    font-size: 0.85rem;
+  }
+
+  .evt-nontech-section {
+    margin-top: 2rem;
+    padding: 1.5rem 0.75rem;
+    border-radius: 20px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .evt-nontech-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .evt-nontech-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .evt-card {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .evt-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .evt-card p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .evt-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .evt-btn-primary {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .evt-loading-center {
+    padding: 2rem;
+    gap: 0.8rem;
+  }
+
+  .evt-loading-center svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .evt-error-message {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .evt-wrapper {
+    padding: 0 0.5rem;
+  }
+
+  .evt-title {
+    font-size: 1.5rem;
+  }
+
+  .evt-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .evt-dept-card {
+    padding: 1rem;
+  }
+
+  .evt-dept-name {
+    font-size: 1rem;
+  }
+
+  .evt-event-btn,
+  .evt-paper-btn {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .evt-nontech-section {
+    padding: 1.2rem 0.5rem;
+  }
+
+  .evt-nontech-title {
+    font-size: 1.2rem;
+  }
+
+  .evt-card {
+    padding: 1rem;
+  }
+
+  .evt-btn-primary {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+}
