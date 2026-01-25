@@ -13,7 +13,7 @@ export const AdminAuth = ({ onAuthenticate }: AdminAuthProps) => {
   const [attempt, setAttempt] = useState(0);
 
   // Simple password - change this to your desired password
-  const ADMIN_PASSWORD = 'tech@blitz2k26';
+  const ADMIN_PASSWORD = 'svhpc@techblitz2k26@816';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

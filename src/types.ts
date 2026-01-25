@@ -13,6 +13,8 @@ export interface Registration {
   eventType: EventType;
   eventName: string;
   paymentScreenshot?: string; // Base64 encoded image
+  paperFile?: string; // Cloudinary URL for PDF/Word file (for paper presentations)
+  paperFileName?: string; // Original filename of the paper
   timestamp: Date;
 }
 

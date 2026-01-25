@@ -409,9 +409,18 @@ select option {
 }
 
 .btn-gold:disabled {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: not-allowed;
   transform: none;
+  background: linear-gradient(135deg, #CCAA00 0%, #D4A80E 100%);
+  border-color: #CCAA00;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
+  pointer-events: none;
+}
+
+.btn-gold:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
 }
 
 .animate-spin {
@@ -607,6 +616,109 @@ select option {
     align-items: flex-start;
     gap: 0.25rem;
   }
+}
+
+/* ===== PAPER FILE SECTION ===== */
+.paper-file-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: rgba(100, 200, 255, 0.08);
+  border: 2px solid rgba(100, 200, 255, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(100, 200, 255, 0.1);
+}
+
+.paper-upload-container h4 {
+  font-size: 1.25rem;
+  color: #64C8FF;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.upload-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.file-uploaded {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(100, 200, 255, 0.1);
+  border: 2px solid rgba(100, 200, 255, 0.4);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.file-uploaded:hover {
+  background: rgba(100, 200, 255, 0.15);
+  border-color: rgba(100, 200, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(100, 200, 255, 0.2);
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.file-info svg {
+  color: #64C8FF;
+  min-width: 20px;
+}
+
+.file-details {
+  flex: 1;
+}
+
+.file-name {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  font-weight: 600;
+  margin: 0;
+  word-break: break-word;
+}
+
+.file-status {
+  font-size: 0.8rem;
+  color: #64C8FF;
+  margin: 0.25rem 0 0 0;
+}
+
+.btn-remove-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 100, 100, 0.1);
+  border: 2px solid rgba(255, 100, 100, 0.3);
+  border-radius: 8px;
+  color: #FF6464;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-remove-file:hover:not(:disabled) {
+  background: rgba(255, 100, 100, 0.2);
+  border-color: #FF6464;
+  transform: scale(1.1);
+}
+
+.btn-remove-file:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* ===== FORCE LABEL VISIBILITY - PRIORITY OVERRIDE ===== */

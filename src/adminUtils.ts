@@ -69,20 +69,38 @@ export const getAllRegistrations = async (): Promise<(Registration & { id: strin
 
 export const exportToExcel = (registrations: (Registration & { id: string })[]) => {
   try {
+    console.log('=== EXCEL EXPORT START ===');
+    console.log('Total registrations to export:', registrations.length);
+    
     // Prepare data for Excel
-    const data = registrations.map((reg) => ({
-      'ID': reg.id,
-      'Name': reg.name,
-      'College': reg.college,
-      'Department': reg.department,
-      'Year': reg.year,
-      'Phone': reg.phone,
-      'Email': reg.email,
-      'Event Type': reg.eventType,
-      'Event Name': reg.eventName,
-      'Payment Screenshot': reg.paymentScreenshot || 'N/A',
-      'Registered On': formatDateForExport(reg.timestamp)
-    }));
+    const data = registrations.map((reg) => {
+      const paperFileValue = reg.eventType === 'paper_presentation' 
+        ? (reg.paperFile ? reg.paperFile : 'Not Uploaded')
+        : 'N/A';
+      
+      if (reg.eventType === 'paper_presentation') {
+        console.log(`Paper Presentation - ${reg.name}:`, {
+          paperFile: paperFileValue,
+          paperFileName: reg.paperFileName || 'N/A'
+        });
+      }
+      
+      return {
+        'ID': reg.id,
+        'Name': reg.name,
+        'College': reg.college,
+        'Department': reg.department,
+        'Year': reg.year,
+        'Phone': reg.phone,
+        'Email': reg.email,
+        'Event Type': reg.eventType,
+        'Event Name': reg.eventName,
+        'Payment Screenshot': reg.paymentScreenshot || 'N/A',
+        'Paper File': paperFileValue,
+        'Paper File Name': reg.eventType === 'paper_presentation' ? (reg.paperFileName || 'N/A') : 'N/A',
+        'Registered On': formatDateForExport(reg.timestamp)
+      };
+    });
 
     // Create workbook and worksheet
     const worksheet = XLSX.utils.json_to_sheet(data);
@@ -101,6 +119,8 @@ export const exportToExcel = (registrations: (Registration & { id: string })[]) 
       { wch: 18 }, // Event Type
       { wch: 25 }, // Event Name
       { wch: 40 }, // Payment Screenshot
+      { wch: 40 }, // Paper File
+      { wch: 25 }, // Paper File Name
       { wch: 20 }  // Registered On
     ];
     worksheet['!cols'] = columnWidths;
@@ -111,8 +131,10 @@ export const exportToExcel = (registrations: (Registration & { id: string })[]) 
 
     // Trigger download
     XLSX.writeFile(workbook, filename);
+    console.log('✅ Excel file exported successfully:', filename);
+    console.log('=== EXCEL EXPORT END ===');
   } catch (error) {
-    console.error('Error exporting to Excel:', error);
+    console.error('❌ Error exporting to Excel:', error);
     throw new Error('Failed to export to Excel');
   }
 };

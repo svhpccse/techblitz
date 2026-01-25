@@ -32,7 +32,7 @@ import './Admin.css';
 
 export const Admin = () => {
   const [registrations, setRegistrations] = useState<(Registration & { id: string })[]>([]);
-  const [activeTab, setActiveTab] = useState<'registrations' | 'rules' | 'events' | 'coordinators'>('registrations');
+  const [activeTab, setActiveTab] = useState<'registrations' | 'rules' | 'events' | 'coordinators' | 'papers'>('registrations');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [exporting, setExporting] = useState(false);
@@ -122,6 +122,34 @@ export const Admin = () => {
     } catch (err) {
       console.error('Error downloading image:', err);
       setError('Failed to download payment proof');
+    }
+  };
+
+  const downloadPaperFile = (fileUrl: string, studentName: string, fileName: string) => {
+    try {
+      const timestamp = new Date().toISOString().slice(0, 10);
+      const sanitizedName = studentName.replace(/\s+/g, '_').toLowerCase();
+      const fileExtension = fileName.split('.').pop() || 'pdf';
+      
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = `paper_${sanitizedName}_${timestamp}.${fileExtension}`;
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (err) {
+      console.error('Error downloading paper file:', err);
+      setError('Failed to download paper file');
+    }
+  };
+
+  const previewPaperFile = (fileUrl: string) => {
+    try {
+      window.open(fileUrl, '_blank');
+    } catch (err) {
+      console.error('Error opening preview:', err);
+      setError('Failed to open file preview');
     }
   };
 
@@ -229,6 +257,13 @@ export const Admin = () => {
         >
           <Users size={18} />
           <span>Coordinators</span>
+        </button>
+        <button
+          className={`tab-button ${activeTab === 'papers' ? 'active' : ''}`}
+          onClick={() => setActiveTab('papers')}
+        >
+          <FileDown size={18} />
+          <span>Paper Files</span>
         </button>
       </div>
 
@@ -431,6 +466,9 @@ export const Admin = () => {
                       <th>Department</th>
                       <th className="text-center">Year</th>
                       <th>Event</th>
+                      {registrations.some(reg => reg.eventType === 'paper_presentation') && (
+                        <th className="text-center">Paper</th>
+                      )}
                       <th className="text-center">Payment</th>
                       <th className="text-center">Date</th>
                     </tr>
@@ -469,6 +507,40 @@ export const Admin = () => {
                             </span>
                           </div>
                         </td>
+                        {registrations.some(r => r.eventType === 'paper_presentation') && (
+                          <td className="paper-cell text-center">
+                            {reg.eventType === 'paper_presentation' ? (
+                              reg.paperFile ? (
+                                <div className="paper-actions">
+                                  <button
+                                    className="icon-btn"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      previewPaperFile(reg.paperFile!);
+                                    }}
+                                    title="Preview paper"
+                                  >
+                                    <Eye size={16} />
+                                  </button>
+                                  <button
+                                    className="icon-btn"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      downloadPaperFile(reg.paperFile!, reg.name, reg.paperFileName || 'paper.pdf');
+                                    }}
+                                    title="Download paper"
+                                  >
+                                    <FileDown size={16} />
+                                  </button>
+                                </div>
+                              ) : (
+                                <span className="no-proof">Pending</span>
+                              )
+                            ) : (
+                              <span className="no-paper">-</span>
+                            )}
+                          </td>
+                        )}
                         <td className="payment-cell">
                           {reg.paymentScreenshot ? (
                             <div className="payment-actions">
@@ -548,6 +620,22 @@ export const Admin = () => {
                           </span>
                         </div>
                       </div>
+                      {reg.eventType === 'paper_presentation' && (
+                        <div className="card-row">
+                          <span className="label">Paper</span>
+                          {reg.paperFile ? (
+                            <button
+                              className="icon-btn small"
+                              onClick={() => downloadPaperFile(reg.paperFile!, reg.name, reg.paperFileName || 'paper.pdf')}
+                              title="Download paper"
+                            >
+                              <FileDown size={14} /> Download
+                            </button>
+                          ) : (
+                            <span className="status pending">Pending</span>
+                          )}
+                        </div>
+                      )}
                       <div className="card-row">
                         <span className="label">Payment</span>
                         {reg.paymentScreenshot ? (
@@ -643,6 +731,104 @@ export const Admin = () => {
         {/* Coordinators Editor Tab */}
         {activeTab === 'coordinators' && (
           <AdminCoordinatorsEditor />
+        )}
+
+        {/* Paper Files Tab */}
+        {activeTab === 'papers' && (
+          <section className="papers-section">
+            <div className="papers-header">
+              <h2>📄 Paper Presentations</h2>
+              <p>Download uploaded paper presentation files</p>
+              <div className="papers-stats">
+                <div className="paper-stat">
+                  <span className="label">Total Papers:</span>
+                  <span className="value">{registrations.filter(r => r.eventType === 'paper_presentation').length}</span>
+                </div>
+                <div className="paper-stat">
+                  <span className="label">Uploaded:</span>
+                  <span className="value">{registrations.filter(r => r.eventType === 'paper_presentation' && r.paperFile).length}</span>
+                </div>
+                <div className="paper-stat">
+                  <span className="label">Pending:</span>
+                  <span className="value">{registrations.filter(r => r.eventType === 'paper_presentation' && !r.paperFile).length}</span>
+                </div>
+              </div>
+            </div>
+
+            {registrations.filter(r => r.eventType === 'paper_presentation').length > 0 ? (
+              <div className="papers-list">
+                {registrations
+                  .filter(r => r.eventType === 'paper_presentation')
+                  .map((reg) => (
+                    <div key={reg.id} className={`paper-card ${reg.paperFile ? 'uploaded' : 'pending'}`}>
+                      <div className="paper-card-header">
+                        <div className="paper-info">
+                          <h4 className="student-name">{reg.name}</h4>
+                          <p className="paper-topic">{reg.eventName.replace('Paper Presentation: ', '')}</p>
+                        </div>
+                        <div className="paper-status">
+                          {reg.paperFile ? (
+                            <span className="badge badge-success">✓ Uploaded</span>
+                          ) : (
+                            <span className="badge badge-pending">⏳ Pending</span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="paper-card-details">
+                        <div className="detail-item">
+                          <span className="detail-label">Email:</span>
+                          <span className="detail-value">{reg.email}</span>
+                        </div>
+                        <div className="detail-item">
+                          <span className="detail-label">College:</span>
+                          <span className="detail-value">{reg.college}</span>
+                        </div>
+                        <div className="detail-item">
+                          <span className="detail-label">Department:</span>
+                          <span className="detail-value badge-dept">{DEPARTMENTS[reg.department]}</span>
+                        </div>
+                      </div>
+
+                      {reg.paperFile && (
+                        <div className="paper-card-footer">
+                          <div className="file-info">
+                            <FileDown size={16} />
+                            <span className="file-name">{reg.paperFileName || 'paper.pdf'}</span>
+                          </div>
+                          <div className="paper-card-actions">
+                            <button
+                              className="btn-preview-paper"
+                              onClick={() => previewPaperFile(reg.paperFile!)}
+                              title="Preview paper"
+                            >
+                              <Eye size={18} />
+                              Preview
+                            </button>
+                            <button
+                              className="btn-download-paper"
+                              onClick={() => downloadPaperFile(reg.paperFile!, reg.name, reg.paperFileName || 'paper.pdf')}
+                              title="Download paper"
+                            >
+                              <Download size={18} />
+                              Download
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+              </div>
+            ) : (
+              <div className="empty-state">
+                <div className="empty-content">
+                  <div className="empty-icon">📄</div>
+                  <h3>No paper presentations</h3>
+                  <p>Paper presentations will appear here</p>
+                </div>
+              </div>
+            )}
+          </section>
         )}
       </main>
 

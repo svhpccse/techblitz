@@ -15,12 +15,24 @@ import { FIRESTORE_COLLECTIONS, NON_TECHNICAL_COLLECTION } from './types';
  */
 export const saveRegistration = async (registration: Omit<Registration, 'timestamp'>) => {
   try {
+    console.log('=== SAVING REGISTRATION TO FIRESTORE ===');
+    console.log('Registration data received:', {
+      name: registration.name,
+      eventType: registration.eventType,
+      eventName: registration.eventName,
+      paperFile: registration.paperFile ? 'EXISTS' : 'MISSING',
+      paperFileName: registration.paperFileName,
+      paymentScreenshot: registration.paymentScreenshot ? 'EXISTS' : 'MISSING'
+    });
+
     // Determine which collection to use
     let collectionName = NON_TECHNICAL_COLLECTION;
 
     if (registration.eventType === 'paper_presentation' || registration.eventType === 'technical') {
       collectionName = FIRESTORE_COLLECTIONS[registration.department];
     }
+
+    console.log('Collection name:', collectionName);
 
     // Create the data object with server timestamp
     const dataToSave = {
@@ -33,11 +45,24 @@ export const saveRegistration = async (registration: Omit<Registration, 'timesta
       eventType: registration.eventType,
       eventName: registration.eventName,
       paymentScreenshot: registration.paymentScreenshot || null,
+      paperFile: registration.paperFile || null,
+      paperFileName: registration.paperFileName || null,
       timestamp: serverTimestamp()
     };
 
+    console.log('Data to save in Firestore:', {
+      ...dataToSave,
+      timestamp: 'SERVER_TIMESTAMP',
+      paperFile: dataToSave.paperFile ? 'URL_SET' : 'NULL',
+      paymentScreenshot: dataToSave.paymentScreenshot ? 'URL_SET' : 'NULL'
+    });
+
     // Add document to the collection
     const docRef = await addDoc(collection(db, collectionName), dataToSave);
+
+    console.log('✅ Registration saved successfully!');
+    console.log('Document ID:', docRef.id);
+    console.log('=== END SAVING REGISTRATION ===');
 
     return {
       success: true,
@@ -45,7 +70,7 @@ export const saveRegistration = async (registration: Omit<Registration, 'timesta
       message: 'Registration saved successfully!'
     };
   } catch (error: any) {
-    console.error('Error saving registration:', error);
+    console.error('❌ Error saving registration:', error);
 
     return {
       success: false,
