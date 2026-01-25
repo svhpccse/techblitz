@@ -244,17 +244,12 @@ export const RegistrationPage = ({ onNavigateBack, initialEvent }: RegistrationP
       }
       console.log('✅ Payment screenshot present');
 
-      // Check if paper file is uploaded for paper presentations
+      // Paper file is now optional for paper presentations
       console.log('Event type:', formData.eventType);
-      if (formData.eventType === 'paper_presentation') {
-        console.log('Paper presentation detected - checking for paper file...');
-        if (!formData.paperFile) {
-          console.log('❌ Paper file missing for paper presentation');
-          setFormError('Please upload your paper file (PDF or Word document) before submitting.');
-          setLoading(false);
-          return;
-        }
+      if (formData.eventType === 'paper_presentation' && formData.paperFile) {
         console.log('✅ Paper file present:', formData.paperFileName);
+      } else if (formData.eventType === 'paper_presentation') {
+        console.log('⚠️  Paper file not uploaded (optional)');
       }
 
       // Save to Firestore
@@ -472,7 +467,7 @@ export const RegistrationPage = ({ onNavigateBack, initialEvent }: RegistrationP
           {formData.eventType === 'paper_presentation' && (
             <div className="paper-file-section">
               <div className="paper-upload-container">
-                <h4>Upload Your Paper *</h4>
+                <h4>Upload Your Paper (Optional)</h4>
                 <p className="upload-description">
                   Submit your paper as a PDF or Word document (DOC/DOCX)
                 </p>
